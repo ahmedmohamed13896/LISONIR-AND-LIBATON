@@ -1,0 +1,1642 @@
+/* CSS Variables */
+:root {
+  --color-blue: #4d79ff; /* Approximate from screenshot */
+  --color-red: #e62e2e; /* Approximate from screenshot */
+  --color-bg-light: #f4f4f4;
+  --font-main: "Raleway", sans-serif;
+  font-size: 18px;
+}
+
+/* Reduce font-size for screens smaller than 1920x1080 */
+@media (max-width: 1919px), (max-height: 1079px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+/* Font Face */
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roundkey Bold";
+  src: url("../fonts/Roundkey Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-light);
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden; /* SPA feel - no scroll */
+  margin: 0;
+  padding: 0;
+}
+
+/* App Container */
+#app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* Landing Page Background with Artboard SVGs */
+#landing-page {
+  position: relative;
+  background: #fff;
+}
+
+#landing-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/Artboard 2.svg"),
+    url("../images/Artboard 3.svg"), url("../images/Artboard 4.svg");
+  background-position: center left, center right, center center;
+  background-repeat: no-repeat;
+  background-size: 40%, 40%, 15%;
+  z-index: 0;
+}
+
+#landing-page .cards-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo - Visible on all pages */
+.app-logo {
+  position: fixed;
+  bottom: 1.875rem;
+  left: 2.5rem;
+  z-index: 1000;
+  width: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hide app logo initially on landing page until animation starts */
+#landing-page .app-logo:not(.animate__animated) {
+  opacity: 0;
+}
+
+/* Hide elements with animation classes until animate__animated is added */
+/* This allows animations to trigger when animate__animated class is added */
+.page-section.active [class*="animate__fadeIn"]:not(.animate__animated),
+.page-section.active [class*="animate__zoom"]:not(.animate__animated),
+.page-section.active [class*="animate__slide"]:not(.animate__animated),
+.page-section.active [class*="animate__bounce"]:not(.animate__animated) {
+  opacity: 0 !important;
+}
+
+/* App logo inside bottom-nav-container (for libaton pages) */
+.bottom-nav-container .app-logo {
+  position: static;
+  width: 9.125rem;
+  flex-shrink: 0;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+.app-logo img {
+  width: 9.375rem; /* Adjust size */
+  height: auto;
+  margin-bottom: 0.3125rem;
+}
+
+.bottom-nav-container .app-logo img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.logo-text {
+  font-weight: 800;
+  color: #333;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Page Sections */
+.page-section {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  overflow: hidden; /* No scroll */
+}
+
+/* Decorations */
+.top-red-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 0.9375rem;
+  background-color: #e62e2e;
+  border-bottom-right-radius: 1.25rem; /* Simulate the curve */
+  z-index: 90;
+}
+
+.top-right-lines {
+  position: absolute;
+  top: 4.375rem;
+  right: 3.125rem;
+  color: #5373ff; /* Light blueish gray */
+  font-family: monospace;
+  font-size: 2.5rem;
+  letter-spacing: 0.3125rem;
+  font-weight: bold;
+  z-index: 90;
+  transform: skewX(-20deg);
+}
+
+.bottom-blue-bar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60%;
+  height: 0.9375rem;
+  background-color: #5373ff; /* Match card blue */
+  border-top-left-radius: 1.25rem;
+  z-index: 90;
+}
+
+.page-section.hidden {
+  display: none;
+}
+
+/* Landing Page Styles - Optimized for 1920x1080 */
+.cards-container {
+  display: flex;
+  gap: 7.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 87.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card {
+  width: 20rem;
+  height: auto;
+  border-radius: 2.5rem;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: transparent;
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
+  overflow: visible; /* Key change: Allow pop-out */
+  /* Space for the pop-out */
+}
+
+/* Hide cards initially on landing page until animation starts */
+#landing-page .card:not(.animate__animated) {
+  opacity: 0;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Simpler hover */
+  z-index: 10;
+}
+
+/* Image Section */
+.card-image-wrapper {
+  width: 100%;
+  height: 18.75rem; /* Slightly shorter height */
+  display: flex;
+  align-items: flex-end; /* Align image to bottom essentially, or center */
+  justify-content: center;
+  position: relative;
+  z-index: 2; /* Content on top */
+  /* Fully rounded */
+  overflow: visible; /* Allow chicken to pop out top */
+  /* Shadow for the black box */
+  margin-bottom: -2.1875rem; /* Overlap with footer */
+  border-top-right-radius: 1.875rem;
+  border-top-left-radius: 1.875rem;
+  padding: 0.625rem;
+}
+
+.card-red .card-image-wrapper {
+  background: var(--color-red);
+}
+
+.card-blue .card-image-wrapper {
+  background: var(--color-blue);
+}
+.card-img {
+  max-width: 97%; /* Slight padding feel */
+  height: auto;
+  /* Pop out and scale up */
+  transition: transform 0.3s ease;
+  border-radius: 2.5rem;
+}
+
+/* Footer Section */
+.card-footer {
+  width: 100%;
+  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.875rem 1.5625rem 0.9375rem 1.875rem; /* Add top padding for overlap */
+  color: white;
+  position: relative;
+  z-index: 1; /* Below image wrapper */
+  border-radius: 0 0 1.875rem 1.875rem; /* Bottom rounded only */
+}
+
+.card-blue .card-footer {
+  background-color: #5373ff; /* Exact Blue Match Attempt */
+}
+
+.card-red .card-footer {
+  background-color: var(--color-red); /* Exact Red Match Attempt */
+}
+
+.card-text h2 {
+  font-size: 1.75rem; /* Larger */
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.card-text p {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  margin-top: 0.3125rem;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.card-arrow img {
+  width: 1.25rem;
+  height: auto;
+  /* transform: rotate(90deg); Removed as arrow-right.svg is already pointing right */
+  filter: brightness(0) invert(1); /* Make white */
+}
+
+/* Remove old card-bg classes */
+
+/* Specific Page Styles */
+.home-btn {
+  cursor: pointer;
+  background: #333;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.3125rem;
+  margin-top: 0;
+  border: none;
+  font-family: var(--font-main);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-btn:hover {
+  background: #555;
+  transform: scale(1.05);
+}
+
+.home-btn img {
+  display: inline-block;
+}
+
+/* ============================================
+ LIBATON Pages Styles
+ Styles for all 5 LIBATON pages with red theme
+ ============================================ */
+
+/* LIBATON Page Container - Full Screen, No Scroll - 1920x1080 */
+.libaton-page {
+  padding: 0;
+  justify-content: space-between;
+  align-items: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+/* Ensure bottom-nav-container is at the bottom of libaton pages */
+.libaton-page .bottom-nav-container {
+  margin-top: auto;
+}
+
+/* Top Right Navigation Bar */
+.top-nav-bar {
+  position: fixed;
+  top: 1rem;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background-color: #dc1f2d;
+  padding: 1rem 1.5625rem;
+  z-index: 1000;
+  border-top-left-radius: 0.9375rem;
+  border-bottom-left-radius: 0.9375rem;
+}
+
+.top-nav-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 1.625rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.lysonir-btn {
+  color: white;
+  background-color: #dc1f2d;
+}
+
+.libaton-btn {
+  color: #dc1f2d;
+  background-color: white;
+  border: 0.125rem solid #dc1f2d;
+  border-radius: 0.3125rem;
+  margin: 0 0.625rem;
+}
+
+.libaton-btn.active {
+  background-color: white;
+  color: #dc1f2d;
+}
+
+.home-icon-btn {
+  width: 4.0625rem;
+  height: 4.0625rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dc1f2d;
+  border: none;
+  margin-left: 0.625rem;
+  cursor: pointer;
+  border-left: 0.0625rem solid #fff;
+}
+
+.home-icon-btn img {
+  width: 4.0625rem;
+  height: 4.0625rem;
+}
+
+.libaton-title {
+  font-size: 4.1875rem; /* Larger for 1920x1080 */
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+  line-height: 1.1;
+  letter-spacing: -0.0625rem;
+  margin-bottom: 0;
+}
+
+.libaton-brand {
+  color: #dc1f2d;
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 0.8;
+  display: block;
+}
+
+.libaton-subtitle {
+  font-size: 2rem; /* Adjusted for 1920x1080 */
+  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+  margin-bottom: 1.5625rem;
+}
+
+.libaton-header .home-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+}
+
+/* Vertical Navigation Menu */
+.vertical-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 0;
+  margin-left: 3.5625rem;
+}
+
+.vertical-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.125rem 1.5625rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: #303030;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.vertical-nav-item:hover {
+  transform: translateX(0.3125rem);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+.vertical-nav-item.active {
+  background-color: rgba(220, 31, 45, 0.1);
+}
+
+.nav-item-icon {
+  width: 4.5rem;
+  height: 3.5rem;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 0.3125rem;
+  background: #dc1f2d;
+  border-radius: 0.3125rem;
+}
+
+.nav-item-text {
+  flex: 1;
+  font-size: 1.25rem;
+}
+
+.nav-item-text strong {
+  color: #dc1f2d;
+  font-weight: 800;
+}
+
+.nav-item-arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* Contact Information */
+.contact-info {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+  margin-left: 5.5625rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  color: #dc1f2d;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.contact-item a {
+  text-decoration: none;
+  color: #dc1f2d;
+}
+
+.contact-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  fill: #dc1f2d;
+}
+
+/* Bottom Navigation Container - Flexbox layout for all three elements */
+.bottom-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0rem 2.5rem;
+  gap: 1.25rem;
+  flex-shrink: 0;
+  z-index: 1000;
+}
+
+/* LIBATON Navigation Bar - Centered between logos */
+.libaton-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5625rem;
+  padding: 0.3125rem 0.9375rem;
+  background-color: #dc1f2d;
+  flex: 1;
+  max-width: calc(100% - 30rem);
+  margin: 0 auto;
+  border-radius: 3.125rem;
+  position: relative;
+  width: 83.4375rem;
+}
+
+.libaton-nav .nav-link {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  text-decoration: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.libaton-nav .nav-link strong {
+  font-weight: 800;
+  display: block;
+  color: white;
+}
+
+.libaton-nav .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.libaton-nav .nav-link.active {
+  color: #dc1f2d;
+  background-color: white;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.625rem 1.875rem;
+  border-radius: 2.1875rem;
+}
+
+.libaton-nav .nav-link.active strong {
+  color: #dc1f2d;
+}
+
+/* Bio glow Logo - Fixed at bottom right */
+.bioglow-logo {
+  position: fixed;
+  bottom: 1.875rem;
+  right: 2.5rem;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Bio glow logo inside bottom-nav-container (for libaton pages) */
+.bottom-nav-container .bioglow-logo {
+  position: static;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.bioglow-logo img {
+  height: 4.0625rem;
+}
+
+/* Navigation Arrow Buttons */
+.nav-arrow {
+  width: 3.75rem;
+  height: 3.75rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-arrow:hover {
+  transform: scale(1.1);
+}
+
+.nav-arrow img {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-arrow-left {
+  position: absolute;
+  left: 1.25rem;
+}
+
+.nav-arrow-right {
+  position: absolute;
+  right: 1.25rem;
+}
+
+/* Navigation Icons */
+.nav-link-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* LIBATON Content Area - Takes remaining space, no scroll */
+.libaton-content {
+  width: 100%;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+
+.content-left {
+  flex: 1;
+  max-width: 50%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 1.125rem 5rem 0 3rem; /* Adjusted for 1920x1080 */
+  justify-content: center;
+}
+
+.content-right {
+  flex: 1;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 8rem 0 0 0;
+}
+
+.image-panel {
+  width: fit-content;
+  height: 34rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  position: relative;
+  background: transparent;
+  margin-left: auto;
+}
+
+.text-content {
+  max-height: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+}
+
+.text-content h2 {
+  font-size: 4.209375rem;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+.text-content p {
+  font-size: 1.3125rem;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+  line-height: 1.4;
+  margin-bottom: 1.25rem;
+}
+
+.main-image {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+}
+
+.main-image-about {
+  border-radius: 1.25rem;
+  object-fit: cover;
+  width: 21.875rem;
+}
+.image-panel::before {
+  content: "";
+  background: #dc1f2d;
+  width: 90%;
+  height: 1.25rem;
+  position: absolute;
+  top: -1.25rem;
+  right: 0;
+  z-index: 5;
+  border-top-left-radius: 0.9375rem;
+}
+
+/* ============================================
+   Page-Specific Content-Right Styles
+   Unique styling for each LIBATON page
+   ============================================ */
+
+/* LIBATON Page 1 - Home/Main Page */
+
+.image-panel-page-1 {
+  height: 60vh;
+  transform: translateX(1rem);
+  transition: transform 0.3s ease;
+  margin-left: auto;
+}
+
+.image-panel-page-1:hover {
+  transform: translateX(1rem) scale(1.02);
+}
+
+.image-panel-page-1::before {
+  width: 90%;
+}
+
+.main-image-page-1 {
+  height: 100%;
+  border-radius: 2.5rem 0 0 2.5rem;
+  object-fit: cover;
+}
+
+/* LIBATON Page 2 - About Page */
+.content-right-page-2 {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(220, 31, 45, 0.06) 0%,
+    transparent 70%
+  );
+  padding: 8rem 0 0 0;
+  position: relative;
+}
+
+.content-right-page-2::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  right: 10%;
+  width: 15rem;
+  height: 15rem;
+  background: radial-gradient(
+    circle,
+    rgba(220, 31, 45, 0.1) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  z-index: 0;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.image-panel-page-2 {
+  height: 32rem;
+  justify-content: flex-start;
+  z-index: 1;
+  margin: auto auto auto 0;
+  width: 100%;
+}
+
+.image-panel-page-2::before {
+  width: 100%;
+  height: 100%;
+  background: #dc1f2d;
+  top: 0;
+  right: 0;
+  border-top-left-radius: 1.9375rem;
+  z-index: -1;
+  border-bottom-left-radius: 1.9375rem;
+}
+
+.main-image-page-2 {
+  border-radius: 1.9375rem;
+  width: 30.875rem;
+  margin-top: -4rem;
+  margin-left: 2rem;
+}
+
+/* LIBATON Page 3 - Composition Page */
+.libaton-page-3 {
+  background-image: linear-gradient(#d9d9d9);
+  background-size: 100% 26.125rem;
+  background-repeat: no-repeat;
+  background-position: center 60%;
+}
+.libaton-page-3 .content-left {
+  padding: 1.125rem 5rem 0 3rem;
+}
+
+.content-right-page-3::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2rem,
+    rgba(220, 31, 45, 0.02) 2rem,
+    rgba(220, 31, 45, 0.02) 4rem
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.image-panel-page-3 {
+  height: 69vh;
+  z-index: 1;
+  margin-right: auto;
+  margin-left: 0;
+  max-width: 720px;
+  width: 70%;
+}
+
+.image-panel-page-3::before {
+  width: 100%;
+  height: 50%;
+  background: #dc1f2d;
+  top: auto;
+  z-index: -1;
+  bottom: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
+.main-image-page-3 {
+  border-radius: 1.5rem;
+  width: 95%;
+  margin: 1rem;
+  display: block;
+  object-fit: cover;
+  height: 95%;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1rem);
+  }
+}
+
+/* LIBATON Page 4 - Why LIBATON Page */
+
+.content-wrapper-page-4 {
+  display: flex;
+  flex-direction: row-reverse; /* Swap visual order */
+}
+
+.content-left-page-4 {
+  /* Keep default padding and styles */
+  display: flex;
+  padding-left: 0;
+}
+
+.content-right-page-4 {
+  padding: 1rem 5rem 0 3rem;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.image-panel-page-4 {
+  max-height: 60vh;
+  z-index: 1;
+  margin: auto 0 auto auto;
+  width: fit-content;
+}
+
+.image-panel-page-4::before {
+  width: 100%;
+  height: 50%;
+  background: #dc1f2d;
+  top: auto;
+  z-index: -1;
+  bottom: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 2rem;
+}
+
+.main-image-page-4 {
+  border-radius: 2rem;
+  width: 96%;
+  margin: auto;
+  display: block;
+}
+
+/* LIBATON Page 5 - Indication Page */
+.libaton-page-5 {
+  background-image: linear-gradient(#d9d9d9);
+  background-size: 100% 26.125rem;
+  background-repeat: no-repeat;
+  background-position: center 59%;
+}
+
+.content-right-page-5 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 12rem;
+}
+
+.image-panel-page-5 {
+  height: fit-content;
+  z-index: 1;
+  transition: filter 0.3s ease;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: 650px;
+  width: 85%;
+}
+
+.image-panel-page-5:hover {
+  filter: brightness(1.05);
+}
+
+.image-panel-page-5::before {
+  content: none;
+}
+
+.main-image-page-5 {
+  border-radius: 1.5rem;
+  object-fit: cover;
+  height: 23rem;
+  width: 100%;
+}
+
+/* ============================================
+   Page-Specific Title Styles
+   Custom styling for .libaton-title on each page
+   ============================================ */
+
+/* LIBATON Page 1 - Home/Main Page Title */
+.libaton-title-page-1 {
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(220, 31, 45, 0.1);
+  letter-spacing: -0.09375rem;
+  transform: translateX(-0.3125rem);
+  transition: all 0.3s ease;
+}
+
+/* LIBATON Page 2 - About Page Title */
+.libaton-title-page-2 {
+  /* Add custom styles here */
+  display: block;
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes expandWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* LIBATON Page 3 - Composition Page Title */
+.libaton-title-page-3 {
+  font-weight: 300;
+  color: #303030;
+  letter-spacing: 0.03125rem;
+  word-spacing: 0.3125rem;
+}
+
+.libaton-brand-page-3 {
+  font-weight: 900;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* LIBATON Page 4 - Why Page Title */
+.libaton-title-page-4 {
+  font-weight: 400;
+  color: #2a2a2a;
+  position: relative;
+  padding-bottom: 0.9375rem;
+}
+
+.libaton-brand-page-4 {
+  /* Add custom styles here */
+  display: block;
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}
+
+.libaton-subtitle-page-4 {
+  color: #606060;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* LIBATON Page 5 - Indication Page Title */
+.libaton-subtitle-page-5 {
+  color: #707070;
+  font-weight: 400;
+  margin-top: 0.625rem;
+  font-style: normal;
+}
+
+/* Additional Utility Classes for Title Sections */
+.title-section {
+  position: relative;
+  padding: 1rem 0;
+}
+
+.libaton-title-page-2:hover {
+  border-left-width: 0.5rem;
+}
+
+.libaton-title-page-3:hover .libaton-brand-page-3::before,
+.libaton-title-page-3:hover .libaton-brand-page-3::after {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.libaton-title-page-5:hover::before {
+  animation: bounce 0.5s ease-in-out infinite;
+}
+
+/* ============================================
+   Page-Specific Content Classes (Empty - Ready for Custom Styling)
+   Add your custom styles below for easy page-specific customization
+   ============================================ */
+
+/* Page 2 - About Page Content Classes */
+.text-content-page-2 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.about-description-page-2 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.about-product-section-page-2 {
+  /* Add custom styles here */
+  display: block;
+}
+
+/* Page 3 - Composition Page Content Classes */
+.composition-boxes-page-3 > div:first-child {
+  grid-column: 1 / -1; /* span full width */
+}
+
+.composition-box-page-3 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.composition-icon-page-3 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.composition-content-page-3 {
+  /* Add custom styles here */
+  display: block;
+  padding: 1rem;
+}
+
+.composition-title-page-3 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.composition-text-page-3 {
+  /* Add custom styles here */
+  display: block;
+}
+
+/* Page 4 - Why LIBATON Page Content Classes */
+.benefits-container-page-4 > div:first-child {
+  grid-column: 1 / -1; /* span full width */
+}
+
+.benefit-capsule-page-4 {
+  /* Add custom styles here */
+  display: block;
+  padding: 1rem;
+}
+
+.benefit-icon-page-4 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.benefit-content-page-4 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.benefit-title-page-4 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.benefit-text-page-4 {
+  /* Add custom styles here */
+  display: block;
+}
+
+/* Page 5 - Indication Page Content Classes */
+.indications-container-page-5 {
+  /* Add custom styles here */
+  display: block;
+}
+
+.indication-number-page-5 {
+  /* Add custom styles here */
+  display: inline-block;
+}
+
+.indication-text-page-5 {
+  /* Add custom styles here */
+  display: block;
+}
+
+/* Animation Delay Utilities for Sequential Reveals */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* About LIBATON Page Styles */
+.about-description {
+  font-size: 1.375rem;
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  color: #303030;
+  line-height: 1.6;
+  margin-bottom: 1.875rem;
+}
+
+.about-product-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.875rem;
+  margin-left: 2rem;
+  margin-bottom: auto;
+}
+
+.product-bottle-left {
+  flex-shrink: 0;
+}
+
+.bottle-image {
+  width: 7.25rem;
+  height: auto;
+  object-fit: contain;
+  position: absolute;
+  left: 2rem;
+  border-radius: 0.75rem;
+  margin-top: -1.5625rem;
+}
+
+.packaging-info {
+  flex: 1;
+  margin-top: 2rem;
+}
+
+.packaging-box {
+  background-color: #dc1f2d;
+  color: white;
+  padding: 0.875rem 1.5625rem;
+  border-radius: 2.875rem;
+  font-family: "Raleway", sans-serif;
+  padding-left: 11.125rem;
+  margin-bottom: 0.625rem;
+}
+
+.packaging-label {
+  font-size: 3.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.packaging-value {
+  font-size: 2.4375rem;
+  font-weight: 300;
+  margin-bottom: 0.9375rem;
+}
+
+.dose-label {
+  font-size: 2.4375rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  padding-left: 11.125rem;
+  color: #dc1f2d;
+}
+
+.dose-value {
+  font-size: 1.4375rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  padding-left: 11.125rem;
+}
+
+.dose-duration {
+  font-size: 1.4375rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+  padding-left: 11.125rem;
+}
+
+/* Composition Page Styles */
+.composition-boxes {
+  gap: 0.9375rem;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.composition-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem 0;
+  padding: 0;
+  background-color: #dc1f2d;
+  border-radius: 1.5rem;
+  color: white;
+  overflow: hidden;
+}
+
+.composition-icon {
+  width: 7.125rem;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 1.5rem 0 0 1.5rem;
+  padding: 1rem;
+}
+
+.composition-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.composition-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.composition-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.composition-text {
+  font-size: 1.125rem;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+  color: white;
+}
+
+/* Why LIBATON Page Styles */
+.benefits-container {
+  gap: 0.9375rem;
+  margin-top: 5.25rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.benefit-capsule {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 3.5rem;
+  color: white;
+  overflow: hidden;
+  max-width: calc(100% - 100px);
+  box-shadow: 0px 0px 10px -4px #cfcfcf;
+}
+
+/* Odd elements (1st, 3rd, 5th) - pushed to right */
+.benefit-capsule:nth-child(odd) {
+  margin-left: auto;
+  background: #fff;
+}
+
+/* Even elements (2nd, 4th) - pushed to left */
+.benefit-capsule:nth-child(even) {
+  margin-right: auto;
+  background: #dc1f2d;
+}
+
+.benefit-icon {
+  /* width: 6.125rem; */
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 1.5rem 0 0 1.5rem;
+  padding: 0.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0;
+}
+
+.benefit-icon img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* Odd elements - red icon background */
+.benefit-capsule:nth-child(odd) .benefit-icon img {
+  background: #dc1f2d;
+}
+
+/* Even elements - white icon background */
+.benefit-capsule:nth-child(even) .benefit-icon img {
+  background: #fff;
+}
+
+.benefit-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  align-items: flex-start;
+  padding: 1rem 1rem;
+  border-radius: 2.5rem;
+}
+
+.benefit-title {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Raleway", sans-serif;
+  margin-bottom: 0;
+}
+
+/* Odd elements - red title text */
+.benefit-capsule:nth-child(odd) .benefit-title {
+  color: #dc1f2d;
+}
+
+/* Even elements - white title text */
+.benefit-capsule:nth-child(even) .benefit-title {
+  color: #fff;
+}
+
+.benefit-text {
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.3;
+}
+
+/* Odd elements - dark text */
+.benefit-capsule:nth-child(odd) .benefit-text {
+  color: #303030;
+}
+
+/* Even elements - white text */
+.benefit-capsule:nth-child(even) .benefit-text {
+  color: #fff;
+}
+
+/* Indication Page Styles */
+.indications-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  margin-top: 1.25rem;
+  width: 85%;
+  max-width: 650px;
+  margin-left: auto;
+  margin: auto;
+}
+
+.indication-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.indication-item:nth-child(odd) {
+  background-color: #dc1f2d;
+  color: white;
+}
+
+.indication-item:nth-child(even) {
+  background-color: white;
+  color: #303030;
+  flex-direction: row-reverse;
+}
+
+.indication-number {
+  font-size: 7rem;
+  font-weight: 700;
+  font-family: "Roundkey Bold", sans-serif;
+  color: #dc1f2d;
+  flex-shrink: 0;
+  min-width: 5rem;
+  line-height: 5rem;
+}
+
+.indication-item:nth-child(odd) .indication-number {
+  color: white;
+}
+
+.indication-text {
+  font-size: 1.25rem;
+  font-weight: 400;
+  font-family: "Raleway", sans-serif;
+  line-height: 1.5;
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.indication-item:nth-child(odd) .indication-text {
+  color: white;
+}
+
+.indication-item:nth-child(even) .indication-text {
+  color: #303030;
+}
+
+/* Indication item in right section (last element moved to content-right) */
+.content-right-page-5 .indication-item {
+  background-color: white !important;
+  flex-direction: row;
+  max-width: 650px;
+  width: 85%;
+}
+
+.content-right-page-5 .indication-number {
+  color: #dc1f2d !important;
+}
+.content-right-page-5 .indication-text {
+  color: #303030 !important;
+}

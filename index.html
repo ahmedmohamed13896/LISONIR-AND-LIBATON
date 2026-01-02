@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MN Trade - LYSONIR & LIBATON</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Main Container -->
+    <div id="app">
+      <!-- Landing Page (Default View) -->
+      <section id="landing-page" class="page-section active">
+        <!-- Decorative Elements -->
+        <div class="top-red-bar"></div>
+        <div class="top-right-lines">//////</div>
+        <div class="bottom-blue-bar"></div>
+
+        <!-- Logo (Bottom Left) -->
+        <div class="app-logo animate__animated animate__fadeInUp">
+          <img src="assets/images/logo.svg" alt="MN Trade Logo" />
+        </div>
+
+        <div class="cards-container">
+          <!-- LYSONIR Card (Blue) -->
+          <div
+            class="card card-blue animate__animated animate__fadeInLeft"
+            onclick="showPage('lysonir')"
+          >
+            <div class="card-image-wrapper">
+              <img
+                src="assets/images/blue-card.png"
+                alt="LYSONIR Chicken"
+                class="card-img"
+              />
+            </div>
+            <div class="card-footer">
+              <div class="card-text">
+                <h2>LYSONIR</h2>
+                <p>360&deg; PROTECTION</p>
+              </div>
+              <div class="card-arrow">
+                <img src="assets/images/arrow-right.svg" alt="Arrow" />
+              </div>
+            </div>
+          </div>
+
+          <!-- LIBATON Card (Red) -->
+          <div
+            class="card card-red animate__animated animate__fadeInRight"
+            onclick="showPage('libaton-1')"
+          >
+            <div class="card-image-wrapper">
+              <img
+                src="assets/images/red-card.png"
+                alt="LIBATON Chicken"
+                class="card-img"
+              />
+            </div>
+            <div class="card-footer">
+              <div class="card-text">
+                <h2>LIBATON</h2>
+                <p>TURN FAT INTO PERFORMANCE</p>
+              </div>
+              <div class="card-arrow">
+                <img src="assets/images/arrow-right.svg" alt="Arrow" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================
+         LIBATON Pages Section
+         All 5 LIBATON pages with navigation
+         ============================================ -->
+
+      <!-- LIBATON Page 1: About LIBATON (Main/Home Page) -->
+      <section id="libaton-page-1" class="page-section libaton-page hidden">
+        <!-- Top Right Navigation Bar -->
+        <nav class="top-nav-bar animate__animated">
+          <button class="top-nav-btn lysonir-btn" onclick="showPage('lysonir')">
+            LYSONIR
+          </button>
+          <button
+            class="top-nav-btn libaton-btn active"
+            onclick="showPage('libaton-1')"
+          >
+            LIBATON
+          </button>
+          <button
+            class="top-nav-btn home-icon-btn"
+            onclick="showPage('landing')"
+            aria-label="Home"
+          >
+            <img src="assets/images/home-icon-libaton.svg" alt="Home" />
+          </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="libaton-content">
+          <div class="content-wrapper">
+            <!-- Left Column: Title, Vertical Navigation, and Contact Info -->
+            <div class="content-left animate__animated">
+              <!-- Title Section -->
+              <div class="title-section animate__animated animate__fadeInDown">
+                <h1 class="libaton-title libaton-title-page-1">
+                  <span class="libaton-brand libaton-brand-page-1"
+                    >LIBATON</span
+                  >
+                </h1>
+                <p class="libaton-subtitle libaton-subtitle-page-1">
+                  TURN FAT INTO <strong>PERFORMANCE</strong>
+                </p>
+              </div>
+
+              <!-- Vertical Navigation Menu -->
+              <nav class="vertical-nav-menu" role="navigation">
+                <a
+                  href="#"
+                  class="vertical-nav-item animate__animated animate__fadeInLeft animate__slow animate-delay-100"
+                  onclick="showPage('libaton-2'); return false;"
+                >
+                  <img
+                    src="assets/images/about-icon.png"
+                    alt="About"
+                    class="nav-item-icon"
+                  />
+                  <span class="nav-item-text"
+                    >ABOUT <strong>LIBATON</strong></span
+                  >
+                  <img
+                    src="assets/images/arrow-right-libaton.svg"
+                    alt="Arrow"
+                    class="nav-item-arrow"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="vertical-nav-item animate__animated animate__fadeInLeft animate__slow animate-delay-200"
+                  onclick="showPage('libaton-3'); return false;"
+                >
+                  <img
+                    src="assets/images/composition-icon.png"
+                    alt="Composition"
+                    class="nav-item-icon"
+                  />
+                  <span class="nav-item-text"
+                    >COMPOSITION OF <strong>LIBATON</strong></span
+                  >
+                  <img
+                    src="assets/images/arrow-right-libaton.svg"
+                    alt="Arrow"
+                    class="nav-item-arrow"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="vertical-nav-item animate__animated animate__fadeInLeft animate__slow animate-delay-300"
+                  onclick="showPage('libaton-4'); return false;"
+                >
+                  <img
+                    src="assets/images/question-icon.png"
+                    alt="Why"
+                    class="nav-item-icon"
+                  />
+                  <span class="nav-item-text"
+                    >WHY <strong>LIBATON</strong></span
+                  >
+                  <img
+                    src="assets/images/arrow-right-libaton.svg"
+                    alt="Arrow"
+                    class="nav-item-arrow"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="vertical-nav-item animate__animated animate__fadeInLeft animate__slow animate-delay-400"
+                  onclick="showPage('libaton-5'); return false;"
+                >
+                  <img
+                    src="assets/images/indication-icon.png"
+                    alt="Indication"
+                    class="nav-item-icon"
+                  />
+                  <span class="nav-item-text"
+                    >INDICATION OF <strong>LIBATON</strong></span
+                  >
+                  <img
+                    src="assets/images/arrow-right-libaton.svg"
+                    alt="Arrow"
+                    class="nav-item-arrow"
+                  />
+                </a>
+              </nav>
+
+              <!-- Contact Information -->
+              <div class="contact-info">
+                <div
+                  class="contact-item animate__animated animate__fadeInLeft animate__slow animate-delay-500"
+                >
+                  <img
+                    src="assets/images/phone-icon.svg"
+                    alt="Phone"
+                    class="contact-icon"
+                  />
+                  <a href="tel:(+20) 5544 34567">(+20) 5544 34567</a>
+                </div>
+                <div
+                  class="contact-item animate__animated animate__fadeInLeft animate__slow animate-delay-600"
+                >
+                  <img
+                    src="assets/images/link-icon.svg"
+                    alt="Link"
+                    class="contact-icon"
+                  />
+                  <a href="www.mntrade-eg.com" target="_blank"
+                    >www.mntrade-eg.com</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Main Product Image -->
+            <div class="content-right content-right-page-1">
+              <div
+                class="image-panel image-panel-page-1 animate__animated animate__fadeInRight"
+              >
+                <img
+                  src="assets/images/red-card-wide.png"
+                  alt="LIBATON product image"
+                  class="main-image main-image-page-1"
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Bottom Navigation Container -->
+        <div class="bottom-nav-container">
+          <!-- App Logo -->
+          <div class="app-logo">
+            <img src="assets/images/logo.svg" alt="MN Trade Logo" />
+          </div>
+
+          <!-- Bottom Navigation Bar -->
+          <nav
+            class="libaton-nav"
+            role="navigation"
+            aria-label="LIBATON pages navigation"
+          >
+            <button
+              class="nav-arrow nav-arrow-left"
+              onclick="navigateLibaton(-1)"
+              aria-label="Previous page"
+            >
+              <img
+                src="assets/images/circle-arrow-left-libaton.svg"
+                alt="Previous"
+              />
+            </button>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-2'); return false;"
+            >
+              ABOUT <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-3'); return false;"
+            >
+              COMPOSITION OF <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-4'); return false;"
+            >
+              WHY <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-5'); return false;"
+            >
+              INDICATION OF <strong>LIBATON</strong>
+            </a>
+            <button
+              class="nav-arrow nav-arrow-right"
+              onclick="navigateLibaton(1)"
+              aria-label="Next page"
+            >
+              <img
+                src="assets/images/circle-arrow-right-libaton.svg"
+                alt="Next"
+              />
+            </button>
+          </nav>
+
+          <!-- Bio glow Logo -->
+          <div class="bioglow-logo">
+            <img src="assets/images/bioglow.jpg" alt="Bio glow" />
+          </div>
+        </div>
+      </section>
+
+      <!-- LIBATON Page 2: About LIBATON -->
+      <section id="libaton-page-2" class="page-section libaton-page hidden">
+        <!-- Top Right Navigation Bar -->
+        <nav class="top-nav-bar animate__animated">
+          <button class="top-nav-btn lysonir-btn" onclick="showPage('lysonir')">
+            LYSONIR
+          </button>
+          <button
+            class="top-nav-btn libaton-btn active"
+            onclick="showPage('libaton-1')"
+          >
+            LIBATON
+          </button>
+          <button
+            class="top-nav-btn home-icon-btn"
+            onclick="showPage('landing')"
+            aria-label="Home"
+          >
+            <img src="assets/images/home-icon-libaton.svg" alt="Home" />
+          </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="libaton-content">
+          <div class="content-wrapper">
+            <!-- Left Column: Title, Content, and Contact Info -->
+            <div class="content-left animate__animated">
+              <!-- Title Section -->
+              <div class="title-section animate__animated animate__fadeInDown">
+                <h1 class="libaton-title libaton-title-page-2">
+                  ABOUT
+                  <span class="libaton-brand libaton-brand-page-2"
+                    >LIBATON</span
+                  >
+                </h1>
+              </div>
+
+              <!-- Product Description -->
+              <article
+                class="text-content text-content-page-2 animate__animated animate__fadeInLeft"
+              >
+                <p class="about-description about-description-page-2">
+                  is a comprehensive liver and heart-support formula promotes
+                  optimal metabolic balance, strengthens liver function, and
+                  enhances overall vitality and productivity in poultry under
+                  various stress conditions.
+                </p>
+              </article>
+
+              <!-- Product Bottle and Packaging Info -->
+              <div
+                class="about-product-section about-product-section-page-2 animate__animated animate__fadeInLeft"
+              >
+                <img
+                  src="assets/images/Layer 1w.png"
+                  alt="LIBATON Bottle"
+                  class="bottle-image"
+                />
+                <div class="packaging-info">
+                  <div class="packaging-box">
+                    <p class="packaging-label">Package</p>
+                    <p class="packaging-value">1 liter</p>
+                  </div>
+                  <p class="dose-label">Dose:</p>
+                  <p class="dose-value">• 0.5 - 1 ml / Liter Drinking Water</p>
+                  <p class="dose-duration">3 - 5 Days</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Main Product Image -->
+            <div class="content-right content-right-page-2">
+              <div
+                class="image-panel image-panel-page-2 animate__animated animate__fadeInRight"
+              >
+                <img
+                  src="assets/images/LIBATON.png"
+                  alt="LIBATON product image"
+                  class="main-image main-image-page-2"
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Bottom Navigation Container -->
+        <div class="bottom-nav-container">
+          <!-- App Logo -->
+          <div class="app-logo">
+            <img src="assets/images/logo.svg" alt="MN Trade Logo" />
+          </div>
+
+          <!-- Bottom Navigation Bar -->
+          <nav
+            class="libaton-nav"
+            role="navigation"
+            aria-label="LIBATON pages navigation"
+          >
+            <button
+              class="nav-arrow nav-arrow-left"
+              onclick="navigateLibaton(-1)"
+              aria-label="Previous page"
+            >
+              <img
+                src="assets/images/circle-arrow-left-libaton.svg"
+                alt="Previous"
+              />
+            </button>
+            <a
+              href="#"
+              class="nav-link active"
+              onclick="showPage('libaton-2'); return false;"
+              aria-current="page"
+            >
+              ABOUT <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-3'); return false;"
+            >
+              COMPOSITION OF <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-4'); return false;"
+            >
+              WHY <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-5'); return false;"
+            >
+              INDICATION OF <strong>LIBATON</strong>
+            </a>
+            <button
+              class="nav-arrow nav-arrow-right"
+              onclick="navigateLibaton(1)"
+              aria-label="Next page"
+            >
+              <img
+                src="assets/images/circle-arrow-right-libaton.svg"
+                alt="Next"
+              />
+            </button>
+          </nav>
+
+          <!-- Bio glow Logo -->
+          <div class="bioglow-logo">
+            <img src="assets/images/bioglow.jpg" alt="Bio glow" />
+          </div>
+        </div>
+      </section>
+
+      <!-- LIBATON Page 3: Composition of LIBATON -->
+      <section
+        id="libaton-page-3"
+        class="libaton-page-3 page-section libaton-page hidden"
+      >
+        <!-- Top Right Navigation Bar -->
+        <nav class="top-nav-bar animate__animated">
+          <button class="top-nav-btn lysonir-btn" onclick="showPage('lysonir')">
+            LYSONIR
+          </button>
+          <button
+            class="top-nav-btn libaton-btn active"
+            onclick="showPage('libaton-1')"
+          >
+            LIBATON
+          </button>
+          <button
+            class="top-nav-btn home-icon-btn"
+            onclick="showPage('landing')"
+            aria-label="Home"
+          >
+            <img src="assets/images/home-icon-libaton.svg" alt="Home" />
+          </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="libaton-content">
+          <div class="content-wrapper">
+            <!-- Left Column: Title, Composition Boxes, and Contact Info -->
+            <div class="content-left animate__animated">
+              <!-- Title Section -->
+              <div class="title-section animate__animated animate__fadeInDown">
+                <h1 class="libaton-title libaton-title-page-3">
+                  <span class="libaton-brand libaton-brand-page-3"
+                    >LIBATON</span
+                  >
+                  COMPOSITION
+                </h1>
+              </div>
+
+              <!-- Composition Boxes -->
+              <div class="composition-boxes composition-boxes-page-3">
+                <div
+                  class="composition-box composition-box-page-3 animate__animated animate__fadeInLeft animate__slow animate-delay-100"
+                >
+                  <div class="composition-icon composition-icon-page-3">
+                    <img src="assets/images/lipid.png" alt="Lipotropic" />
+                  </div>
+                  <div class="composition-content composition-content-page-3">
+                    <h3 class="composition-title composition-title-page-3">
+                      Lipotropic agents:
+                    </h3>
+                    <p class="composition-text composition-text-page-3">
+                      D-L Methionine 2.5%, Natural Betaine 7%, Choline 4%,
+                      L-Carnitine 0.6%, and Lysine 2%
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="composition-box composition-box-page-3 animate__animated animate__fadeInLeft animate__slow animate-delay-200"
+                >
+                  <div class="composition-icon composition-icon-page-3">
+                    <img src="assets/images/4.png" alt="Detoxifying" />
+                  </div>
+                  <div class="composition-content composition-content-page-3">
+                    <h3 class="composition-title composition-title-page-3">
+                      Detoxifying enzyme:
+                    </h3>
+                    <p class="composition-text composition-text-page-3">
+                      Carboxyl Estrase Enzyme
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="composition-box composition-box-page-3 animate__animated animate__fadeInLeft animate__slow animate-delay-250"
+                >
+                  <div class="composition-icon composition-icon-page-3">
+                    <img src="assets/images/2_1.png" alt="Taurine" />
+                  </div>
+                  <div class="composition-content composition-content-page-3">
+                    <h3 class="composition-title composition-title-page-3">
+                      Taurine
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="composition-box composition-box-page-3 animate__animated animate__fadeInLeft animate__slow animate-delay-300"
+                >
+                  <div class="composition-icon composition-icon-page-3">
+                    <img src="assets/images/3.png" alt="Propolis" />
+                  </div>
+                  <div class="composition-content composition-content-page-3">
+                    <h3 class="composition-title composition-title-page-3">
+                      Propolis
+                    </h3>
+                  </div>
+                </div>
+                <div
+                  class="composition-box composition-box-page-3 animate__animated animate__fadeInLeft animate__slow animate-delay-350"
+                >
+                  <div class="composition-icon composition-icon-page-3">
+                    <img src="assets/images/1.png" alt="Essential Oils" />
+                  </div>
+                  <div class="composition-content composition-content-page-3">
+                    <h3 class="composition-title composition-title-page-3">
+                      Essential Oils:
+                    </h3>
+                    <p class="composition-text composition-text-page-3">
+                      Olive Oil, Grape seed Oil, Linseed Oil, and Citrus Oil.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Main Product Image -->
+            <div class="content-right content-right-page-3">
+              <div
+                class="image-panel image-panel-page-3 animate__animated animate__fadeInRight"
+              >
+                <img
+                  src="assets/images/Group 12.png"
+                  alt="LIBATON Composition"
+                  class="main-image main-image-page-3"
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Bottom Navigation Container -->
+        <div class="bottom-nav-container">
+          <!-- App Logo -->
+          <div class="app-logo">
+            <img src="assets/images/logo.svg" alt="MN Trade Logo" />
+          </div>
+
+          <!-- Bottom Navigation Bar -->
+          <nav
+            class="libaton-nav"
+            role="navigation"
+            aria-label="LIBATON pages navigation"
+          >
+            <button
+              class="nav-arrow nav-arrow-left"
+              onclick="navigateLibaton(-1)"
+              aria-label="Previous page"
+            >
+              <img
+                src="assets/images/circle-arrow-left-libaton.svg"
+                alt="Previous"
+              />
+            </button>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-2'); return false;"
+            >
+              ABOUT <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link active"
+              onclick="showPage('libaton-3'); return false;"
+              aria-current="page"
+            >
+              COMPOSITION OF <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-4'); return false;"
+            >
+              WHY <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-5'); return false;"
+            >
+              INDICATION OF <strong>LIBATON</strong>
+            </a>
+            <button
+              class="nav-arrow nav-arrow-right"
+              onclick="navigateLibaton(1)"
+              aria-label="Next page"
+            >
+              <img
+                src="assets/images/circle-arrow-right-libaton.svg"
+                alt="Next"
+              />
+            </button>
+          </nav>
+
+          <!-- Bio glow Logo -->
+          <div class="bioglow-logo">
+            <img src="assets/images/bioglow.jpg" alt="Bio glow" />
+          </div>
+        </div>
+      </section>
+
+      <!-- LIBATON Page 4: Why LIBATON -->
+      <section
+        id="libaton-page-4"
+        class="libaton-page-4 page-section libaton-page hidden"
+      >
+        <!-- Top Right Navigation Bar -->
+        <nav class="top-nav-bar animate__animated">
+          <button class="top-nav-btn lysonir-btn" onclick="showPage('lysonir')">
+            LYSONIR
+          </button>
+          <button
+            class="top-nav-btn libaton-btn active"
+            onclick="showPage('libaton-1')"
+          >
+            LIBATON
+          </button>
+          <button
+            class="top-nav-btn home-icon-btn"
+            onclick="showPage('landing')"
+            aria-label="Home"
+          >
+            <img src="assets/images/home-icon-libaton.svg" alt="Home" />
+          </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="libaton-content">
+          <div class="content-wrapper content-wrapper-page-4">
+            <!-- Left Column: Title, Benefits, and Contact Info -->
+            <div class="content-left content-left-page-4 animate__animated">
+              <!-- Benefits Capsules -->
+              <div class="benefits-container benefits-container-page-4">
+                <div
+                  class="benefit-capsule benefit-capsule-page-4 animate__animated animate__fadeInRight animate__slow animate-delay-100"
+                >
+                  <div class="benefit-icon benefit-icon-page-4">
+                    <img src="assets/images/lipid (1).png" alt="Benefit 1" />
+                  </div>
+                  <div class="benefit-content benefit-content-page-4">
+                    <h3 class="benefit-title benefit-title-page-4">
+                      Libaton Turn Fat into Performance:
+                    </h3>
+                    <p class="benefit-text benefit-text-page-4">
+                      Libaton activates the liver's lipotropic pathway -
+                      Methionine, Natural Betaine and Choline mobilize fat,
+                      while L-Carnitine drives fatty acids into mitochondria for
+                      clean energy resulting No fatty liver, better growth,
+                      stronger flock evennunder heat stress.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="benefit-capsule benefit-capsule-page-4 animate__animated animate__fadeInRight animate__slow animate-delay-200"
+                >
+                  <div class="benefit-icon benefit-icon-page-4">
+                    <img src="assets/images/muscle-spasm.png" alt="Benefit 2" />
+                  </div>
+                  <div class="benefit-content benefit-content-page-4">
+                    <h3 class="benefit-title benefit-title-page-4">
+                      Heart & Muscle Strength in One Dose:
+                    </h3>
+                    <p class="benefit-text benefit-text-page-4">
+                      Libaton supports cardiovascular and muscle performance
+                      through Taurine and essential oils as high-value energy
+                      sources resulting Lower mortality in ascites, more
+                      vitality, better feed conversion.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="benefit-capsule benefit-capsule-page-4 animate__animated animate__fadeInRight animate__slow animate-delay-300"
+                >
+                  <div class="benefit-icon benefit-icon-page-4">
+                    <img src="assets/images/Ellipse 2.png" alt="Benefit 3" />
+                  </div>
+                  <div class="benefit-content benefit-content-page-4">
+                    <h3 class="benefit-title benefit-title-page-4">
+                      Complete Metabolic Balance - Not Just Vitamins:
+                    </h3>
+                    <p class="benefit-text benefit-text-page-4">
+                      Libaton balances metabolism, protects the liver, boosts
+                      energy, and delivers real performance results for poultry
+                      farmers.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="benefit-capsule benefit-capsule-page-4 animate__animated animate__fadeInRight animate__slow animate-delay-400"
+                >
+                  <div class="benefit-icon benefit-icon-page-4">
+                    <img src="assets/images/eggs.png" alt="Benefit 4" />
+                  </div>
+                  <div class="benefit-content benefit-content-page-4">
+                    <h3 class="benefit-title benefit-title-page-4">
+                      Protect Reproduction from Invisible Mycotoxins:
+                    </h3>
+                    <p class="benefit-text benefit-text-page-4">
+                      Libaton prevents damage to the ovary and improve egg
+                      quality Resulting Higher fertility and consistent egg
+                      quality during toxin challenges.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="benefit-capsule benefit-capsule-page-4 animate__animated animate__fadeInRight animate__slow animate-delay-500"
+                >
+                  <div class="benefit-icon benefit-icon-page-4">
+                    <img src="assets/images/adenovirus.png" alt="Benefit 5" />
+                  </div>
+                  <div class="benefit-content benefit-content-page-4">
+                    <h3 class="benefit-title benefit-title-page-4">
+                      Built for Stress - Especially Heat & Adenovirus:
+                    </h3>
+                    <p class="benefit-text benefit-text-page-4">
+                      Libaton keeps birds eating, growing, and surviving under
+                      heavy stress like heat stress, ascites, and viral
+                      pressure.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Main Product Image -->
+            <div class="content-right content-right-page-4">
+              <!-- Title Section -->
+              <div class="title-section animate__animated animate__fadeInDown">
+                <h1 class="libaton-title libaton-title-page-4">
+                  WHY
+                  <span class="libaton-brand libaton-brand-page-4"
+                    >LIBATON</span
+                  >
+                </h1>
+              </div>
+              <div
+                class="image-panel image-panel-page-4 animate__animated animate__fadeInLeft"
+              >
+                <img
+                  src="assets/images/11213.png"
+                  alt="Why LIBATON"
+                  class="main-image main-image-page-4"
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Bottom Navigation Container -->
+        <div class="bottom-nav-container">
+          <!-- App Logo -->
+          <div class="app-logo">
+            <img src="assets/images/logo.svg" alt="MN Trade Logo" />
+          </div>
+
+          <!-- Bottom Navigation Bar -->
+          <nav
+            class="libaton-nav"
+            role="navigation"
+            aria-label="LIBATON pages navigation"
+          >
+            <button
+              class="nav-arrow nav-arrow-left"
+              onclick="navigateLibaton(-1)"
+              aria-label="Previous page"
+            >
+              <img
+                src="assets/images/circle-arrow-left-libaton.svg"
+                alt="Previous"
+              />
+            </button>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-2'); return false;"
+            >
+              ABOUT <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-3'); return false;"
+            >
+              COMPOSITION OF <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link active"
+              onclick="showPage('libaton-4'); return false;"
+              aria-current="page"
+            >
+              WHY <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-5'); return false;"
+            >
+              INDICATION OF <strong>LIBATON</strong>
+            </a>
+            <button
+              class="nav-arrow nav-arrow-right"
+              onclick="navigateLibaton(1)"
+              aria-label="Next page"
+            >
+              <img
+                src="assets/images/circle-arrow-right-libaton.svg"
+                alt="Next"
+              />
+            </button>
+          </nav>
+
+          <!-- Bio glow Logo -->
+          <div class="bioglow-logo">
+            <img src="assets/images/bioglow.jpg" alt="Bio glow" />
+          </div>
+        </div>
+      </section>
+
+      <!-- LIBATON Page 5: Indication of LIBATON -->
+      <section
+        id="libaton-page-5"
+        class="libaton-page-5 page-section libaton-page hidden"
+      >
+        <!-- Top Right Navigation Bar -->
+        <nav class="top-nav-bar animate__animated">
+          <button class="top-nav-btn lysonir-btn" onclick="showPage('lysonir')">
+            LYSONIR
+          </button>
+          <button
+            class="top-nav-btn libaton-btn active"
+            onclick="showPage('libaton-1')"
+          >
+            LIBATON
+          </button>
+          <button
+            class="top-nav-btn home-icon-btn"
+            onclick="showPage('landing')"
+            aria-label="Home"
+          >
+            <img src="assets/images/home-icon-libaton.svg" alt="Home" />
+          </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="libaton-content">
+          <div class="content-wrapper">
+            <!-- Left Column: Title, Indications, and Contact Info -->
+            <div class="content-left animate__animated">
+              <!-- Title Section -->
+              <div class="title-section animate__animated animate__fadeInDown">
+                <h1 class="libaton-title libaton-title-page-5">
+                  <span class="libaton-brand libaton-brand-page-1"
+                    >LIBATON</span
+                  >
+                  IS INDICATED AS
+                </h1>
+              </div>
+
+              <!-- Indications List -->
+              <div class="indications-container indications-container-page-5">
+                <div
+                  class="indication-item indication-item-page-5 animate__animated animate__fadeInLeft animate__slow animate-delay-100"
+                >
+                  <span class="indication-number indication-number-page-5"
+                    >01</span
+                  >
+                  <p class="indication-text indication-text-page-5">
+                    Improve fat metabolism and Prevention of Fatty Liver
+                    Syndrome
+                  </p>
+                </div>
+                <div
+                  class="indication-item indication-item-page-5 animate__animated animate__fadeInLeft animate__slow animate-delay-200"
+                >
+                  <span class="indication-number indication-number-page-5"
+                    >02</span
+                  >
+                  <p class="indication-text indication-text-page-5">
+                    Improve Cardiovascular & Muscle Health
+                  </p>
+                </div>
+                <div
+                  class="indication-item indication-item-page-5 animate__animated animate__fadeInLeft animate__slow animate-delay-300"
+                >
+                  <span class="indication-number indication-number-page-5"
+                    >03</span
+                  >
+                  <p class="indication-text indication-text-page-5">
+                    Enhance Reproductive Performance & Egg Quality
+                  </p>
+                </div>
+                <div
+                  class="indication-item indication-item-page-5 animate__animated animate__fadeInLeft animate__slow animate-delay-400"
+                >
+                  <span class="indication-number indication-number-page-5"
+                    >04</span
+                  >
+                  <p class="indication-text indication-text-page-5">
+                    Neutralization of reproduction mycotoxins
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Main Product Image -->
+            <div class="content-right content-right-page-5">
+              <div
+                class="indication-item indication-item-page-5 animate__animated animate__fadeInRight animate__slow animate-delay-500"
+              >
+                <span class="indication-number indication-number-page-5"
+                  >05</span
+                >
+                <p class="indication-text indication-text-page-5">
+                  Supportive treatment in case of heat stress, ascites and viral
+                  infections specially Adenovirus
+                </p>
+              </div>
+              <div
+                class="image-panel image-panel-page-5 animate__animated animate__fadeInRight"
+              >
+                <img
+                  src="assets/images/Group 13sssa.png"
+                  alt="LIBATON Indications"
+                  class="main-image main-image-page-5"
+                />
+              </div>
+            </div>
+          </div>
+        </main>
+
+        <!-- Bottom Navigation Container -->
+        <div class="bottom-nav-container">
+          <!-- App Logo -->
+          <div class="app-logo">
+            <img src="assets/images/logo.svg" alt="MN Trade Logo" />
+          </div>
+
+          <!-- Bottom Navigation Bar -->
+          <nav
+            class="libaton-nav"
+            role="navigation"
+            aria-label="LIBATON pages navigation"
+          >
+            <button
+              class="nav-arrow nav-arrow-left"
+              onclick="navigateLibaton(-1)"
+              aria-label="Previous page"
+            >
+              <img
+                src="assets/images/circle-arrow-left-libaton.svg"
+                alt="Previous"
+              />
+            </button>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-2'); return false;"
+            >
+              ABOUT <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-3'); return false;"
+            >
+              COMPOSITION OF <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link"
+              onclick="showPage('libaton-4'); return false;"
+            >
+              WHY <strong>LIBATON</strong>
+            </a>
+            <a
+              href="#"
+              class="nav-link active"
+              onclick="showPage('libaton-5'); return false;"
+              aria-current="page"
+            >
+              INDICATION OF <strong>LIBATON</strong>
+            </a>
+            <button
+              class="nav-arrow nav-arrow-right"
+              onclick="navigateLibaton(1)"
+              aria-label="Next page"
+            >
+              <img
+                src="assets/images/circle-arrow-right-libaton.svg"
+                alt="Next"
+              />
+            </button>
+          </nav>
+
+          <!-- Bio glow Logo -->
+          <div class="bioglow-logo">
+            <img src="assets/images/bioglow.jpg" alt="Bio glow" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
