@@ -1633,12 +1633,14 @@ body {
 .benefit-capsule:nth-child(odd) .benefit-text {
   color: #303030;
 }
-
 /* Even elements - white text */
 .benefit-capsule:nth-child(even) .benefit-text {
   color: #fff;
 }
 
+.benefit-capsule:nth-child(odd) .benefit-text strong {
+  color: #dc1f2d;
+}
 /* Indication Page Styles */
 .indications-container {
   display: flex;
