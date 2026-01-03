@@ -1,7 +1,7 @@
 /* CSS Variables */
 :root {
-  --color-blue: #4d79ff; /* Approximate from screenshot */
-  --color-red: #e62e2e; /* Approximate from screenshot */
+  --color-blue: #4c5efe; /* Approximate from screenshot */
+  --color-red: #dc1f2d; /* Approximate from screenshot */
   --color-bg-light: #f4f4f4;
   --font-main: "Raleway", sans-serif;
   font-size: 18px;
@@ -415,6 +415,7 @@ body {
   font-size: 1.625rem;
   transition: all 0.3s ease;
   background: transparent;
+  border-radius: 0.3125rem;
 }
 
 .lysonir-btn {
@@ -426,7 +427,6 @@ body {
   color: #dc1f2d;
   background-color: white;
   border: 0.125rem solid #dc1f2d;
-  border-radius: 0.3125rem;
   margin: 0 0.625rem;
 }
 
@@ -447,6 +447,7 @@ body {
   margin-left: 0.625rem;
   cursor: pointer;
   border-left: 0.0625rem solid #fff;
+  border-radius: 0;
 }
 
 .home-icon-btn img {
@@ -608,7 +609,7 @@ body {
 
 .libaton-nav .nav-link {
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 300;
   font-family: "Raleway", sans-serif;
   color: white;
   text-decoration: none;
@@ -634,7 +635,6 @@ body {
 .libaton-nav .nav-link.active {
   color: #dc1f2d;
   background-color: white;
-  font-weight: 700;
   text-align: center;
   padding: 0.625rem 1.875rem;
   border-radius: 2.1875rem;
@@ -740,6 +740,9 @@ body {
   padding: 1.125rem 5rem 0 3rem; /* Adjusted for 1920x1080 */
   justify-content: center;
 }
+.content-left .container {
+  margin: auto 0;
+}
 
 .content-right {
   flex: 1;
@@ -747,7 +750,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
   padding: 8rem 0 0 0;
 }
 
@@ -765,7 +767,7 @@ body {
 .text-content {
   max-height: 100%;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   margin-left: 3rem;
 }
 
@@ -919,6 +921,10 @@ body {
   padding: 1.125rem 5rem 0 3rem;
 }
 
+#lysonir-page-3 {
+  background-image: linear-gradient(#525cf6);
+}
+
 .content-right-page-3::after {
   content: "";
   position: absolute;
@@ -1021,6 +1027,7 @@ body {
   width: 96%;
   margin: auto;
   display: block;
+  cursor: pointer;
 }
 
 /* LIBATON Page 5 - Indication Page */
@@ -1063,6 +1070,10 @@ body {
   object-fit: cover;
   height: 23rem;
   width: 100%;
+  cursor: pointer;
+}
+#lysonir-page-5 .main-image-page-5 {
+  height: 25rem;
 }
 
 /* ============================================
@@ -1115,7 +1126,6 @@ body {
 .libaton-brand-page-3 {
   font-weight: 900;
   position: relative;
-  display: inline-block;
   text-transform: uppercase;
 }
 
@@ -1162,6 +1172,19 @@ body {
   padding: 1rem 0;
 }
 
+.title-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -3rem;
+  width: 1.5rem;
+  height: 8rem;
+  background-color: #e2e2e2;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin: auto;
+}
+
 .libaton-title-page-2:hover {
   border-left-width: 0.5rem;
 }
@@ -1186,6 +1209,10 @@ body {
   display: block;
 }
 
+.lysonir-page-2 .text-content-page-2 {
+  margin-bottom: 0;
+}
+
 .about-description-page-2 {
   /* Add custom styles here */
   display: block;
@@ -1200,7 +1227,9 @@ body {
 .composition-boxes-page-3 > div:first-child {
   grid-column: 1 / -1; /* span full width */
 }
-
+#lysonir-page-3 .composition-boxes-page-3 > div:first-child {
+  grid-column: 1;
+}
 .composition-box-page-3 {
   /* Add custom styles here */
   display: block;
@@ -1337,6 +1366,12 @@ body {
   left: 2rem;
   border-radius: 0.75rem;
   margin-top: -1.5625rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.bottle-image:hover {
+  transform: scale(1.02);
 }
 
 .packaging-info {
@@ -1397,6 +1432,10 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
+#lysonir-page-3 .composition-boxes {
+  margin-left: auto;
+}
+
 .composition-box {
   display: flex;
   align-items: flex-start;
@@ -1442,7 +1481,16 @@ body {
   margin-bottom: 0.5rem;
   color: white;
 }
-
+#lysonir-page-3 .composition-title {
+  color: #4c5efe;
+  font-weight: 900;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
 .composition-text {
   font-size: 1.125rem;
   font-weight: 400;
@@ -1523,12 +1571,12 @@ body {
   justify-content: center;
   height: 100%;
   align-items: flex-start;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 2.5rem;
 }
 
 .benefit-title {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
   font-family: "Raleway", sans-serif;
   margin-bottom: 0;
@@ -1545,10 +1593,40 @@ body {
 }
 
 .benefit-text {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
   font-family: "Raleway", sans-serif;
   line-height: 1.3;
+}
+
+/* Page 4 Interactive Elements - hide capsules by default and animate in on image clicks */
+.benefit-capsule {
+  display: none; /* hidden until revealed */
+}
+
+.benefit-capsule.show {
+  display: flex !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hide child elements initially; they will animate after parent */
+.benefit-capsule.show .benefit-icon img,
+.benefit-capsule.show .benefit-title,
+.benefit-capsule.show .benefit-text {
+  opacity: 0;
+}
+
+/* Staggered child animations starting after parent animation (0.6s) */
+.benefit-capsule.show .benefit-icon img {
+  animation: zoomIn 0.5s ease-out 0.6s forwards;
+}
+
+.benefit-capsule.show .benefit-title {
+  animation: fadeDown 0.5s ease-out 0.8s forwards;
+}
+
+.benefit-capsule.show .benefit-text {
+  animation: fadeUp 0.5s ease-out 1s forwards;
 }
 
 /* Odd elements - dark text */
@@ -1626,6 +1704,160 @@ body {
   color: #303030;
 }
 
+/* Page 5 Interactive Elements - hide indication items by default on libaton-page-5 and animate sequentially */
+#libaton-page-5 .indication-item {
+  display: none;
+}
+
+#libaton-page-5 .indication-item.show {
+  display: flex !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+#libaton-page-5 .indication-item.show .indication-number,
+#libaton-page-5 .indication-item.show .indication-text {
+  opacity: 0;
+}
+
+#libaton-page-5 .indication-item.show .indication-number {
+  animation: zoomIn 0.5s ease-out 0.6s forwards;
+}
+
+#libaton-page-5 .indication-item.show .indication-text {
+  animation: fadeUp 0.5s ease-out 0.8s forwards;
+}
+
+/* Page 2 Interactive Elements */
+.main-image-page-2 {
+  cursor: pointer;
+}
+
+.main-image-page-2:hover {
+  transform: scale(1.02);
+}
+
+/* Hide elements by default for page 2 interactions */
+.text-content-page-2,
+.bottle-image,
+.packaging-box,
+.dose-label,
+.dose-value,
+.dose-duration {
+  display: none;
+}
+
+/* Show animations when elements appear */
+.text-content-page-2.show,
+.bottle-image.show,
+.packaging-box.show,
+.dose-label.show,
+.dose-value.show,
+.dose-duration.show {
+  display: block !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page 3 Interactive Elements */
+.main-image-page-3 {
+  cursor: pointer;
+}
+
+/* Hide composition boxes by default for page 3 interactions */
+.composition-box-page-3 {
+  display: none;
+}
+
+/* Show animations when composition boxes appear */
+.composition-box-page-3.show {
+  display: flex !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hide child elements by default - they will animate in after parent */
+.composition-box-page-3.show .composition-icon-page-3 img,
+.composition-box-page-3.show .composition-title,
+.composition-box-page-3.show .composition-text-page-3 {
+  opacity: 0;
+}
+
+/* Staggered child animations for composition boxes - start after parent animation completes (0.6s) */
+.composition-box-page-3.show .composition-icon-page-3 img {
+  animation: zoomIn 0.5s ease-out 0.6s forwards;
+}
+
+.composition-box-page-3.show .composition-title {
+  animation: fadeDown 0.5s ease-out 0.8s forwards;
+}
+
+.composition-box-page-3.show .composition-text-page-3 {
+  animation: fadeUp 0.5s ease-out 1s forwards;
+}
+
+/* Zoom In animation */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade Down animation */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade Up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse animation used for clickable images while sequence is incomplete */
+.pulse {
+  animation: pulseAnim 1s ease-in-out infinite !important;
+  transform-origin: center center;
+}
+
+@keyframes pulseAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Indication item in right section (last element moved to content-right) */
 .content-right-page-5 .indication-item {
   background-color: white !important;
@@ -1639,4 +1871,390 @@ body {
 }
 .content-right-page-5 .indication-text {
   color: #303030 !important;
+}
+
+/* ============================================
+   LYSONIR Theme - Blue Color Scheme
+   Override LIBATON red (#dc1f2d) with blue (#4c5efe)
+   ============================================ */
+
+/* LYSONIR Top Navigation Bar */
+#lysonir-page-1 .top-nav-bar,
+#lysonir-page-2 .top-nav-bar,
+#lysonir-page-3 .top-nav-bar,
+#lysonir-page-4 .top-nav-bar,
+#lysonir-page-5 .top-nav-bar {
+  background-color: #4c5efe;
+}
+
+#lysonir-page-1 .lysonir-btn,
+#lysonir-page-2 .lysonir-btn,
+#lysonir-page-3 .lysonir-btn,
+#lysonir-page-4 .lysonir-btn,
+#lysonir-page-5 .lysonir-btn {
+  color: #4c5efe;
+  background-color: white;
+}
+
+#lysonir-page-1 .lysonir-btn.active,
+#lysonir-page-2 .lysonir-btn.active,
+#lysonir-page-3 .lysonir-btn.active,
+#lysonir-page-4 .lysonir-btn.active,
+#lysonir-page-5 .lysonir-btn.active {
+  color: #4c5efe;
+  background-color: white;
+}
+
+#lysonir-page-1 .libaton-btn,
+#lysonir-page-2 .libaton-btn,
+#lysonir-page-3 .libaton-btn,
+#lysonir-page-4 .libaton-btn,
+#lysonir-page-5 .libaton-btn {
+  color: white;
+  background-color: transparent;
+  border: 0.125rem solid transparent;
+}
+
+#lysonir-page-1 .home-icon-btn,
+#lysonir-page-2 .home-icon-btn,
+#lysonir-page-3 .home-icon-btn,
+#lysonir-page-4 .home-icon-btn,
+#lysonir-page-5 .home-icon-btn {
+  background-color: #4c5efe;
+  border-left: 0.0625rem solid #fff;
+}
+
+/* LYSONIR Bottom Navigation Bar */
+#lysonir-page-1 .libaton-nav,
+#lysonir-page-2 .libaton-nav,
+#lysonir-page-3 .libaton-nav,
+#lysonir-page-4 .libaton-nav,
+#lysonir-page-5 .libaton-nav {
+  background-color: #4c5efe;
+}
+
+#lysonir-page-1 .libaton-nav .nav-link.active,
+#lysonir-page-2 .libaton-nav .nav-link.active,
+#lysonir-page-3 .libaton-nav .nav-link.active,
+#lysonir-page-4 .libaton-nav .nav-link.active,
+#lysonir-page-5 .libaton-nav .nav-link.active {
+  color: #4c5efe;
+  background-color: white;
+}
+
+#lysonir-page-1 .libaton-nav .nav-link.active strong,
+#lysonir-page-2 .libaton-nav .nav-link.active strong,
+#lysonir-page-3 .libaton-nav .nav-link.active strong,
+#lysonir-page-4 .libaton-nav .nav-link.active strong,
+#lysonir-page-5 .libaton-nav .nav-link.active strong {
+  color: #4c5efe;
+}
+
+/* LYSONIR Title Brand Color */
+#lysonir-page-1 .libaton-brand,
+#lysonir-page-2 .libaton-brand,
+#lysonir-page-3 .libaton-brand,
+#lysonir-page-4 .libaton-brand,
+#lysonir-page-5 .libaton-brand {
+  color: #4c5efe;
+}
+
+/* LYSONIR Image Panel Background */
+#lysonir-page-1 .image-panel::before,
+#lysonir-page-2 .image-panel::before,
+#lysonir-page-3 .image-panel::before,
+#lysonir-page-4 .image-panel::before {
+  background: #4c5efe;
+}
+
+/* LYSONIR Page 2 Specific */
+#lysonir-page-2 .image-panel-page-2::before {
+  background: #4c5efe;
+}
+
+#lysonir-page-2 .packaging-box {
+  background-color: #4c5efe;
+  color: white;
+}
+
+#lysonir-page-2 .dose-label {
+  color: #4c5efe;
+}
+
+/* LYSONIR Page 2 - bottle image width override */
+#lysonir-page-2 .bottle-image {
+  width: 10.5rem;
+}
+
+/* LYSONIR Page 3 Specific - Composition Boxes */
+#lysonir-page-3 .composition-box {
+  background-color: white;
+  color: #4c5efe;
+}
+
+#lysonir-page-3 .composition-box .composition-icon {
+  background-color: #4f5dfa;
+  height: auto;
+  width: 100%;
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* LYSONIR Page 4 Specific - Benefit Capsules */
+#lysonir-page-4 .content-left-page-4 {
+  padding-left: 3rem;
+}
+#lysonir-page-4 .benefit-capsule:nth-child(odd) {
+  background: #4c5efe;
+}
+
+#lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-title {
+  color: white;
+}
+#lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-text {
+  color: white;
+}
+#lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-icon img {
+  background: white;
+}
+
+#lysonir-page-4 .benefit-capsule:nth-child(even) {
+  background: white;
+}
+
+#lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-icon img {
+  background: #4c5efe;
+}
+#lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-title {
+  color: #4c5efe;
+}
+
+#lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-icon img {
+  background: #4c5efe;
+}
+#lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-text {
+  color: #303030;
+}
+
+/* LYSONIR Page 5 Specific - Indication Items */
+#lysonir-page-5 .indication-item:nth-child(odd) {
+  background-color: #4c5efe;
+  color: white;
+}
+
+#lysonir-page-5 .indication-item:nth-child(odd) .indication-number {
+  color: white;
+}
+
+#lysonir-page-5 .indication-item:nth-child(even) .indication-number {
+  color: #4c5efe;
+}
+
+/* LYSONIR Page 5 Right Section Override */
+#lysonir-page-5 .content-right-page-5 .indication-item {
+  background-color: white !important;
+  flex-direction: row;
+  max-width: 650px;
+  width: 85%;
+}
+
+#lysonir-page-5 .content-right-page-5 .indication-number {
+  color: #4c5efe !important;
+}
+
+#lysonir-page-5 .content-right-page-5 .indication-text {
+  color: #303030 !important;
+}
+
+/* LYSONIR Image Panel Page 3 & 4 Background */
+#lysonir-page-3 .image-panel-page-3::before,
+#lysonir-page-4 .image-panel-page-4::before {
+  background: #4c5efe;
+}
+
+/* ============================================
+   LYSONIR Animations - Page 2
+   Apply same animations as LIBATON Page 2
+   ============================================ */
+
+/* Hide elements by default for LYSONIR page 2 interactions */
+#lysonir-page-2 .text-content-page-2,
+#lysonir-page-2 .bottle-image,
+#lysonir-page-2 .packaging-box,
+#lysonir-page-2 .dose-label,
+#lysonir-page-2 .dose-value,
+#lysonir-page-2 .dose-duration {
+  display: none;
+}
+
+/* Show animations when elements appear on LYSONIR page 2 */
+#lysonir-page-2 .text-content-page-2.show,
+#lysonir-page-2 .bottle-image.show,
+#lysonir-page-2 .packaging-box.show,
+#lysonir-page-2 .dose-label.show,
+#lysonir-page-2 .dose-value.show,
+#lysonir-page-2 .dose-duration.show {
+  display: block !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   LYSONIR Animations - Page 3
+   Apply same animations as LIBATON Page 3
+   ============================================ */
+
+/* Hide composition boxes by default for LYSONIR page 3 interactions */
+#lysonir-page-3 .composition-box-page-3 {
+  display: none;
+  border: 2px solid #fff;
+  flex-direction: column;
+  gap: 0;
+}
+#lysonir-page-3 .composition-box-page-3 img {
+  max-height: 6rem;
+  max-width: 100%;
+}
+
+/* Show animations when composition boxes appear on LYSONIR page 3 */
+#lysonir-page-3 .composition-box-page-3.show {
+  display: flex !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hide child elements by default - they will animate in after parent */
+#lysonir-page-3 .composition-box-page-3.show .composition-icon-page-3 img,
+#lysonir-page-3 .composition-box-page-3.show .composition-title,
+#lysonir-page-3 .composition-box-page-3.show .composition-text-page-3 {
+  opacity: 0;
+}
+
+/* Staggered child animations for LYSONIR page 3 composition boxes - start after parent animation completes (0.6s) */
+#lysonir-page-3 .composition-box-page-3.show .composition-icon-page-3 img {
+  animation: zoomIn 0.5s ease-out 0.6s forwards;
+}
+
+#lysonir-page-3 .composition-box-page-3.show .composition-title {
+  animation: fadeDown 0.5s ease-out 0.8s forwards;
+}
+
+#lysonir-page-3 .composition-box-page-3.show .composition-text-page-3 {
+  animation: fadeUp 0.5s ease-out 1s forwards;
+}
+
+/* ============================================
+   LYSONIR Animations - Page 4
+   Apply same animations as LIBATON Page 4
+   ============================================ */
+
+/* Page 4 Interactive Elements for LYSONIR - hide capsules by default and animate in on image clicks */
+#lysonir-page-4 .benefit-capsule {
+  display: none; /* hidden until revealed */
+}
+
+#lysonir-page-4 .benefit-capsule.show {
+  display: flex !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hide child elements initially; they will animate after parent */
+#lysonir-page-4 .benefit-capsule.show .benefit-icon img,
+#lysonir-page-4 .benefit-capsule.show .benefit-title,
+#lysonir-page-4 .benefit-capsule.show .benefit-text {
+  opacity: 0;
+}
+
+/* Staggered child animations starting after parent animation (0.6s) */
+#lysonir-page-4 .benefit-capsule.show .benefit-icon img {
+  animation: zoomIn 0.5s ease-out 0.6s forwards;
+}
+
+#lysonir-page-4 .benefit-capsule.show .benefit-title {
+  animation: fadeDown 0.5s ease-out 0.8s forwards;
+}
+
+#lysonir-page-4 .benefit-capsule.show .benefit-text {
+  animation: fadeUp 0.5s ease-out 1s forwards;
+}
+
+/* ============================================
+   LYSONIR Animations - Page 5
+   Apply same animations as LIBATON Page 5
+   ============================================ */
+
+/* Page 5 Interactive Elements - hide indication items by default on lysonir-page-5 and animate sequentially */
+#lysonir-page-5 .indication-item {
+  display: none;
+  padding: 0.7rem 1rem;
+}
+
+#lysonir-page-5 .indication-item.show {
+  display: flex !important;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+#lysonir-page-5 .indication-item.show .indication-number,
+#lysonir-page-5 .indication-item.show .indication-text {
+  opacity: 0;
+}
+
+#lysonir-page-5 .indication-item.show .indication-number {
+  animation: zoomIn 0.5s ease-out 0.6s forwards;
+}
+
+#lysonir-page-5 .indication-item.show .indication-text {
+  animation: fadeUp 0.5s ease-out 0.8s forwards;
+}
+
+/* LYSONIR Text & Icon Color Overrides
+   Ensure LYSONIR pages use blue (#4c5efe) instead of red (#dc1f2d)
+*/
+#lysonir-page-1 .nav-item-text strong,
+#lysonir-page-2 .nav-item-text strong,
+#lysonir-page-3 .nav-item-text strong,
+#lysonir-page-4 .nav-item-text strong,
+#lysonir-page-5 .nav-item-text strong,
+#lysonir-page-1 .contact-item,
+#lysonir-page-2 .contact-item,
+#lysonir-page-3 .contact-item,
+#lysonir-page-4 .contact-item,
+#lysonir-page-5 .contact-item,
+#lysonir-page-1 .contact-item a,
+#lysonir-page-2 .contact-item a,
+#lysonir-page-3 .contact-item a,
+#lysonir-page-4 .contact-item a,
+#lysonir-page-5 .contact-item a,
+#lysonir-page-1 .libaton-brand,
+#lysonir-page-2 .libaton-brand,
+#lysonir-page-3 .libaton-brand,
+#lysonir-page-4 .libaton-brand,
+#lysonir-page-5 .libaton-brand {
+  color: #4c5efe !important;
+}
+
+#lysonir-page-1 .nav-item-icon,
+#lysonir-page-2 .nav-item-icon,
+#lysonir-page-3 .nav-item-icon,
+#lysonir-page-4 .nav-item-icon,
+#lysonir-page-5 .nav-item-icon {
+  background: #4c5efe !important;
+}
+
+#lysonir-page-1 .contact-icon,
+#lysonir-page-2 .contact-icon,
+#lysonir-page-3 .contact-icon,
+#lysonir-page-4 .contact-icon,
+#lysonir-page-5 .contact-icon {
+  fill: #4c5efe !important;
+}
+
+/* LYSONIR: indication numbers - odd = white, even = blue */
+
+#lysonir-page-5 .indication-item:nth-child(odd) .indication-number {
+  color: white;
+}
+
+#lysonir-page-5 .indication-item:nth-child(even) .indication-number {
+  color: #4c5efe;
+}
+#lysonir-page-5 .content-right-page-5 .indication-item {
+  color: #4c5efe !important;
 }
