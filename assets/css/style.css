@@ -196,6 +196,54 @@ body {
   border-bottom-right-radius: 1.25rem; /* Simulate the curve */
   z-index: 90;
 }
+.small-screen-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 12000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.small-screen-popup .small-screen-overlay {
+  position: absolute;
+  inset: 0;
+  /* Full white overlay with no transparency as requested */
+  background: #ffffff;
+}
+.small-screen-dialog {
+  position: relative;
+  z-index: 12001;
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+  color: #111;
+  padding: 1.5rem 1.5rem 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 460px;
+  width: 94%;
+  /* Stronger, softer shadow for depth */
+  box-shadow: 0 18px 50px rgba(20, 25, 60, 0.25),
+    0 6px 18px rgba(20, 25, 60, 0.12);
+  overflow: visible;
+  text-align: center;
+}
+.small-screen-dialog h2 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  color: var(--color-red);
+  font-weight: 800;
+}
+.small-screen-dialog .small-screen-desc {
+  font-size: 0.98rem;
+  line-height: 1.45;
+  color: var(--color-blue);
+  font-weight: 600;
+}
+
+/* Ensure popup stays hidden on larger screens (laptop and up) */
+@media (min-width: 1024px) and (orientation: landscape) {
+  .small-screen-popup {
+    display: none !important;
+  }
+}
 
 .top-right-lines {
   position: absolute;
@@ -399,7 +447,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0;
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
   padding: 1rem 1.5625rem;
   z-index: 1000;
   border-top-left-radius: 0.9375rem;
@@ -420,19 +468,19 @@ body {
 
 .lysonir-btn {
   color: white;
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
 }
 
 .libaton-btn {
-  color: #dc1f2d;
+  color: var(--color-red);
   background-color: white;
-  border: 0.125rem solid #dc1f2d;
+  border: 0.125rem solid var(--color-red);
   margin: 0 0.625rem;
 }
 
 .libaton-btn.active {
   background-color: white;
-  color: #dc1f2d;
+  color: var(--color-red);
 }
 
 .home-icon-btn {
@@ -442,7 +490,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
   border: none;
   margin-left: 0.625rem;
   cursor: pointer;
@@ -466,7 +514,7 @@ body {
 }
 
 .libaton-brand {
-  color: #dc1f2d;
+  color: var(--color-red);
   font-weight: 800;
   font-size: 6rem;
   line-height: 0.8;
@@ -528,7 +576,7 @@ body {
   flex-shrink: 0;
   object-fit: contain;
   padding: 0.3125rem;
-  background: #dc1f2d;
+  background: var(--color-red);
   border-radius: 0.3125rem;
 }
 
@@ -538,7 +586,7 @@ body {
 }
 
 .nav-item-text strong {
-  color: #dc1f2d;
+  color: var(--color-red);
   font-weight: 800;
 }
 
@@ -562,21 +610,21 @@ body {
   gap: 0.75rem;
   font-family: "Raleway", sans-serif;
   font-size: 1.25rem;
-  color: #dc1f2d;
+  color: var(--color-red);
   font-weight: 400;
   text-decoration: none;
 }
 
 .contact-item a {
   text-decoration: none;
-  color: #dc1f2d;
+  color: var(--color-red);
 }
 
 .contact-icon {
   width: 1.25rem;
   height: 1.25rem;
   flex-shrink: 0;
-  fill: #dc1f2d;
+  fill: var(--color-red);
 }
 
 /* Bottom Navigation Container - Flexbox layout for all three elements */
@@ -598,7 +646,7 @@ body {
   justify-content: center;
   gap: 1.5625rem;
   padding: 0.3125rem 0.9375rem;
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
   flex: 1;
   max-width: calc(100% - 30rem);
   margin: 0 auto;
@@ -633,7 +681,7 @@ body {
 }
 
 .libaton-nav .nav-link.active {
-  color: #dc1f2d;
+  color: var(--color-red);
   background-color: white;
   text-align: center;
   padding: 0.625rem 1.875rem;
@@ -641,7 +689,7 @@ body {
 }
 
 .libaton-nav .nav-link.active strong {
-  color: #dc1f2d;
+  color: var(--color-red);
 }
 
 /* Bio glow Logo - Fixed at bottom right */
@@ -806,7 +854,7 @@ body {
 }
 .image-panel::before {
   content: "";
-  background: #dc1f2d;
+  background: var(--color-red);
   width: 90%;
   height: 1.25rem;
   position: absolute;
@@ -895,7 +943,7 @@ body {
 .image-panel-page-2::before {
   width: 100%;
   height: 100%;
-  background: #dc1f2d;
+  background: var(--color-red);
   top: 0;
   right: 0;
   border-top-left-radius: 1.9375rem;
@@ -925,24 +973,6 @@ body {
   background-image: linear-gradient(#525cf6);
 }
 
-.content-right-page-3::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background: repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 2rem,
-    rgba(220, 31, 45, 0.02) 2rem,
-    rgba(220, 31, 45, 0.02) 4rem
-  );
-  pointer-events: none;
-  z-index: 0;
-}
-
 .image-panel-page-3 {
   height: 69vh;
   z-index: 1;
@@ -955,7 +985,7 @@ body {
 .image-panel-page-3::before {
   width: 100%;
   height: 50%;
-  background: #dc1f2d;
+  background: var(--color-red);
   top: auto;
   z-index: -1;
   bottom: 0;
@@ -1012,7 +1042,7 @@ body {
 .image-panel-page-4::before {
   width: 100%;
   height: 50%;
-  background: #dc1f2d;
+  background: var(--color-red);
   top: auto;
   z-index: -1;
   bottom: 0;
@@ -1380,7 +1410,7 @@ body {
 }
 
 .packaging-box {
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
   color: white;
   padding: 0.875rem 1.5625rem;
   border-radius: 2.875rem;
@@ -1406,7 +1436,7 @@ body {
   font-weight: 700;
   margin-bottom: 0.5rem;
   padding-left: 11.125rem;
-  color: #dc1f2d;
+  color: var(--color-red);
 }
 
 .dose-value {
@@ -1441,7 +1471,7 @@ body {
   align-items: flex-start;
   gap: 1.25rem 0;
   padding: 0;
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
   border-radius: 1.5rem;
   color: white;
   overflow: hidden;
@@ -1482,7 +1512,7 @@ body {
   color: white;
 }
 #lysonir-page-3 .composition-title {
-  color: #4c5efe;
+  color: var(--color-blue);
   font-weight: 900;
   font-family: "Raleway", sans-serif;
   font-size: 1.5rem;
@@ -1529,7 +1559,7 @@ body {
 /* Even elements (2nd, 4th) - pushed to left */
 .benefit-capsule:nth-child(even) {
   margin-right: auto;
-  background: #dc1f2d;
+  background: var(--color-red);
 }
 
 .benefit-icon {
@@ -1556,7 +1586,7 @@ body {
 
 /* Odd elements - red icon background */
 .benefit-capsule:nth-child(odd) .benefit-icon img {
-  background: #dc1f2d;
+  background: var(--color-red);
 }
 
 /* Even elements - white icon background */
@@ -1584,7 +1614,7 @@ body {
 
 /* Odd elements - red title text */
 .benefit-capsule:nth-child(odd) .benefit-title {
-  color: #dc1f2d;
+  color: var(--color-red);
 }
 
 /* Even elements - white title text */
@@ -1639,7 +1669,7 @@ body {
 }
 
 .benefit-capsule:nth-child(odd) .benefit-text strong {
-  color: #dc1f2d;
+  color: var(--color-red);
 }
 /* Indication Page Styles */
 .indications-container {
@@ -1665,7 +1695,7 @@ body {
 }
 
 .indication-item:nth-child(odd) {
-  background-color: #dc1f2d;
+  background-color: var(--color-red);
   color: white;
 }
 
@@ -1679,7 +1709,7 @@ body {
   font-size: 7rem;
   font-weight: 700;
   font-family: "Roundkey Bold", sans-serif;
-  color: #dc1f2d;
+  color: var(--color-red);
   flex-shrink: 0;
   min-width: 5rem;
   line-height: 5rem;
@@ -1869,7 +1899,7 @@ body {
 }
 
 .content-right-page-5 .indication-number {
-  color: #dc1f2d !important;
+  color: var(--color-red) !important;
 }
 .content-right-page-5 .indication-text {
   color: #303030 !important;
@@ -1877,7 +1907,7 @@ body {
 
 /* ============================================
    LYSONIR Theme - Blue Color Scheme
-   Override LIBATON red (#dc1f2d) with blue (#4c5efe)
+   Override LIBATON red (var(--color-red)) with blue (var(--color-blue))
    ============================================ */
 
 /* LYSONIR Top Navigation Bar */
@@ -1886,7 +1916,7 @@ body {
 #lysonir-page-3 .top-nav-bar,
 #lysonir-page-4 .top-nav-bar,
 #lysonir-page-5 .top-nav-bar {
-  background-color: #4c5efe;
+  background-color: var(--color-blue);
 }
 
 #lysonir-page-1 .lysonir-btn,
@@ -1894,7 +1924,7 @@ body {
 #lysonir-page-3 .lysonir-btn,
 #lysonir-page-4 .lysonir-btn,
 #lysonir-page-5 .lysonir-btn {
-  color: #4c5efe;
+  color: var(--color-blue);
   background-color: white;
 }
 
@@ -1903,7 +1933,7 @@ body {
 #lysonir-page-3 .lysonir-btn.active,
 #lysonir-page-4 .lysonir-btn.active,
 #lysonir-page-5 .lysonir-btn.active {
-  color: #4c5efe;
+  color: var(--color-blue);
   background-color: white;
 }
 
@@ -1922,7 +1952,7 @@ body {
 #lysonir-page-3 .home-icon-btn,
 #lysonir-page-4 .home-icon-btn,
 #lysonir-page-5 .home-icon-btn {
-  background-color: #4c5efe;
+  background-color: var(--color-blue);
   border-left: 0.0625rem solid #fff;
 }
 
@@ -1932,7 +1962,7 @@ body {
 #lysonir-page-3 .libaton-nav,
 #lysonir-page-4 .libaton-nav,
 #lysonir-page-5 .libaton-nav {
-  background-color: #4c5efe;
+  background-color: var(--color-blue);
 }
 
 #lysonir-page-1 .libaton-nav .nav-link.active,
@@ -1940,7 +1970,7 @@ body {
 #lysonir-page-3 .libaton-nav .nav-link.active,
 #lysonir-page-4 .libaton-nav .nav-link.active,
 #lysonir-page-5 .libaton-nav .nav-link.active {
-  color: #4c5efe;
+  color: var(--color-blue);
   background-color: white;
 }
 
@@ -1949,7 +1979,7 @@ body {
 #lysonir-page-3 .libaton-nav .nav-link.active strong,
 #lysonir-page-4 .libaton-nav .nav-link.active strong,
 #lysonir-page-5 .libaton-nav .nav-link.active strong {
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 
 /* LYSONIR Title Brand Color */
@@ -1958,7 +1988,7 @@ body {
 #lysonir-page-3 .libaton-brand,
 #lysonir-page-4 .libaton-brand,
 #lysonir-page-5 .libaton-brand {
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 
 /* LYSONIR Image Panel Background */
@@ -1966,21 +1996,21 @@ body {
 #lysonir-page-2 .image-panel::before,
 #lysonir-page-3 .image-panel::before,
 #lysonir-page-4 .image-panel::before {
-  background: #4c5efe;
+  background: var(--color-blue);
 }
 
 /* LYSONIR Page 2 Specific */
 #lysonir-page-2 .image-panel-page-2::before {
-  background: #4c5efe;
+  background: var(--color-blue);
 }
 
 #lysonir-page-2 .packaging-box {
-  background-color: #4c5efe;
+  background-color: var(--color-blue);
   color: white;
 }
 
 #lysonir-page-2 .dose-label {
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 
 /* LYSONIR Page 2 - bottle image width override */
@@ -1991,11 +2021,11 @@ body {
 /* LYSONIR Page 3 Specific - Composition Boxes */
 #lysonir-page-3 .composition-box {
   background-color: white;
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 
 #lysonir-page-3 .composition-box .composition-icon {
-  background-color: #4f5dfa;
+  background-color: var(--color-blue);
   height: auto;
   width: 100%;
   border-radius: 1.5rem 1.5rem 0 0;
@@ -2006,7 +2036,7 @@ body {
   padding-left: 3rem;
 }
 #lysonir-page-4 .benefit-capsule:nth-child(odd) {
-  background: #4c5efe;
+  background: var(--color-blue);
 }
 
 #lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-title {
@@ -2024,14 +2054,14 @@ body {
 }
 
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-icon img {
-  background: #4c5efe;
+  background: var(--color-blue);
 }
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-title {
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-icon img {
-  background: #4c5efe;
+  background: var(--color-blue);
 }
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-text {
   color: #303030;
@@ -2039,7 +2069,7 @@ body {
 
 /* LYSONIR Page 5 Specific - Indication Items */
 #lysonir-page-5 .indication-item:nth-child(odd) {
-  background-color: #4c5efe;
+  background-color: var(--color-blue);
   color: white;
 }
 
@@ -2048,7 +2078,7 @@ body {
 }
 
 #lysonir-page-5 .indication-item:nth-child(even) .indication-number {
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 
 /* LYSONIR Page 5 Right Section Override */
@@ -2060,7 +2090,7 @@ body {
 }
 
 #lysonir-page-5 .content-right-page-5 .indication-number {
-  color: #4c5efe !important;
+  color: var(--color-blue) !important;
 }
 
 #lysonir-page-5 .content-right-page-5 .indication-text {
@@ -2070,7 +2100,7 @@ body {
 /* LYSONIR Image Panel Page 3 & 4 Background */
 #lysonir-page-3 .image-panel-page-3::before,
 #lysonir-page-4 .image-panel-page-4::before {
-  background: #4c5efe;
+  background: var(--color-blue);
 }
 
 /* ============================================
@@ -2207,7 +2237,7 @@ body {
 }
 
 /* LYSONIR Text & Icon Color Overrides
-   Ensure LYSONIR pages use blue (#4c5efe) instead of red (#dc1f2d)
+   Ensure LYSONIR pages use blue (var(--color-blue)) instead of red (var(--color-red))
 */
 #lysonir-page-1 .nav-item-text strong,
 #lysonir-page-2 .nav-item-text strong,
@@ -2229,7 +2259,7 @@ body {
 #lysonir-page-3 .libaton-brand,
 #lysonir-page-4 .libaton-brand,
 #lysonir-page-5 .libaton-brand {
-  color: #4c5efe !important;
+  color: var(--color-blue) !important;
 }
 
 #lysonir-page-1 .nav-item-icon,
@@ -2237,7 +2267,7 @@ body {
 #lysonir-page-3 .nav-item-icon,
 #lysonir-page-4 .nav-item-icon,
 #lysonir-page-5 .nav-item-icon {
-  background: #4c5efe !important;
+  background: var(--color-blue) !important;
 }
 
 #lysonir-page-1 .contact-icon,
@@ -2245,7 +2275,7 @@ body {
 #lysonir-page-3 .contact-icon,
 #lysonir-page-4 .contact-icon,
 #lysonir-page-5 .contact-icon {
-  fill: #4c5efe !important;
+  fill: var(--color-blue) !important;
 }
 
 /* LYSONIR: indication numbers - odd = white, even = blue */
@@ -2255,8 +2285,8 @@ body {
 }
 
 #lysonir-page-5 .indication-item:nth-child(even) .indication-number {
-  color: #4c5efe;
+  color: var(--color-blue);
 }
 #lysonir-page-5 .content-right-page-5 .indication-item {
-  color: #4c5efe !important;
+  color: var(--color-blue) !important;
 }

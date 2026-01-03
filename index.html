@@ -13,6 +13,23 @@
   <body>
     <!-- Main Container -->
     <div id="app">
+      <!-- Small screen notice popup (shown on screens smaller than laptops) -->
+      <div
+        id="small-screen-popup"
+        class="small-screen-popup"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Screen size notice"
+      >
+        <div class="small-screen-overlay" data-dismiss="overlay"></div>
+        <div class="small-screen-dialog">
+          <h2>Not Support for Small Screens</h2>
+          <p class="small-screen-desc">
+            Please use landscape mode and desktop/laptops screens for the best
+            experience.
+          </p>
+        </div>
+      </div>
       <!-- Landing Page (Default View) -->
       <section id="landing-page" class="page-section active">
         <!-- Decorative Elements -->
