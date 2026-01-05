@@ -113,7 +113,7 @@ function updatePulseStates() {
     } else {
       $img2.removeClass("pulse");
     }
-    const $bottle = $p2Lib.find(".bottle-image");
+    const $bottle = $p2Lib.find(".product-bottle-left");
     if (
       $bottle.length &&
       bottleImageClickCount < 2 &&
@@ -132,7 +132,7 @@ function updatePulseStates() {
     } else {
       $img2.removeClass("pulse");
     }
-    const $bottle = $p2Lys.find(".bottle-image");
+    const $bottle = $p2Lys.find(".product-bottle-left");
     if (
       $bottle.length &&
       bottleImageClickCount < 2 &&
@@ -321,7 +321,7 @@ $(document).on("mouseleave", ".libaton-nav .nav-link", function () {
 /**
  * Page 2 Interactive Elements - Main Image Clicks
  * First click: Show text-content-page-2
- * Second click: Show bottle-image (keep text-content visible)
+ * Second click: Show product-bottle-left (keep text-content visible)
  * After second click: Do nothing on further clicks
  * Works for both LIBATON and LYSONIR
  */
@@ -350,7 +350,7 @@ $(document).on("click", ".main-image-page-2", function () {
     $page2Content.find(".text-content-page-2").addClass("show");
   } else if (page2ImageClickCount === 2) {
     // Second click: Show bottle image (text content stays visible)
-    $page2Content.find(".bottle-image").addClass("show pulse");
+    $page2Content.find(".product-bottle-left").addClass("show pulse");
   }
   // Update pulse state after click
   updatePulseStates();
@@ -409,7 +409,7 @@ $(document).on("click", ".top-nav-btn, .nav-link, .nav-arrow", function () {
   page5ImageClickCount = 0;
   // Remove any pulse classes immediately when navigating
   $(
-    ".main-image-page-2, .bottle-image, .main-image-page-3, .main-image-page-4, .main-image-page-5"
+    ".main-image-page-2, .product-bottle-left, .main-image-page-3, .main-image-page-4, .main-image-page-5"
   ).removeClass("pulse");
   // Ensure pulses reflect reset state
   updatePulseStates();
