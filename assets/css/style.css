@@ -1502,8 +1502,9 @@ body {
   margin-bottom: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  min-height: 23rem;
+  min-height: 26rem;
   align-content: start;
+  padding-top: 1.5rem;
 }
 
 #lysonir-page-3 .composition-boxes {
