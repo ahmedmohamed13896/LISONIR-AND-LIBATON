@@ -1,14 +1,17 @@
 /* CSS Variables */
 :root {
-  --color-blue: #4c5efe; /* Approximate from screenshot */
-  --color-red: #dc1f2d; /* Approximate from screenshot */
+  --color-blue: #4c5efe;
+  /* Approximate from screenshot */
+  --color-red: #dc1f2d;
+  /* Approximate from screenshot */
   --color-bg-light: #f4f4f4;
   --font-main: "Raleway", sans-serif;
   font-size: 18px;
 }
 
 /* Reduce font-size for screens smaller than 1920x1080 */
-@media (max-width: 1919px), (max-height: 1079px) {
+@media (max-width: 1919px),
+(max-height: 1079px) {
   :root {
     font-size: 14px;
   }
@@ -76,7 +79,8 @@ body {
   background-color: var(--color-bg-light);
   height: 100vh;
   width: 100vw;
-  overflow: hidden; /* SPA feel - no scroll */
+  overflow: hidden;
+  /* SPA feel - no scroll */
   margin: 0;
   padding: 0;
 }
@@ -152,7 +156,8 @@ body {
 }
 
 .app-logo img {
-  width: 9.375rem; /* Adjust size */
+  width: 9.375rem;
+  /* Adjust size */
   height: auto;
   margin-bottom: 0.3125rem;
 }
@@ -182,7 +187,8 @@ body {
   justify-content: center;
   align-items: center;
   background: transparent;
-  overflow: hidden; /* No scroll */
+  overflow: hidden;
+  /* No scroll */
 }
 
 /* Decorations */
@@ -193,9 +199,11 @@ body {
   width: 60%;
   height: 0.9375rem;
   background-color: #e62e2e;
-  border-bottom-right-radius: 1.25rem; /* Simulate the curve */
+  border-bottom-right-radius: 1.25rem;
+  /* Simulate the curve */
   z-index: 90;
 }
+
 .small-screen-popup {
   position: fixed;
   inset: 0;
@@ -204,12 +212,14 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .small-screen-popup .small-screen-overlay {
   position: absolute;
   inset: 0;
   /* Full white overlay with no transparency as requested */
   background: #ffffff;
 }
+
 .small-screen-dialog {
   position: relative;
   z-index: 12001;
@@ -217,7 +227,7 @@ body {
   color: #111;
   padding: 1.5rem 1.5rem 1.25rem 1.5rem;
   border-radius: 0.75rem;
-  max-width: 460px;
+  max-width: 28.75rem;
   width: 94%;
   /* Stronger, softer shadow for depth */
   box-shadow: 0 18px 50px rgba(20, 25, 60, 0.25),
@@ -225,12 +235,14 @@ body {
   overflow: visible;
   text-align: center;
 }
+
 .small-screen-dialog h2 {
   font-size: 1.125rem;
   margin-bottom: 0.25rem;
   color: var(--color-red);
   font-weight: 800;
 }
+
 .small-screen-dialog .small-screen-desc {
   font-size: 0.98rem;
   line-height: 1.45;
@@ -249,7 +261,8 @@ body {
   position: absolute;
   top: 4.375rem;
   right: 3.125rem;
-  color: #5373ff; /* Light blueish gray */
+  color: var(--color-blue);
+  /* Light blueish gray */
   font-family: monospace;
   font-size: 2.5rem;
   letter-spacing: 0.3125rem;
@@ -264,7 +277,8 @@ body {
   right: 0;
   width: 60%;
   height: 0.9375rem;
-  background-color: #5373ff; /* Match card blue */
+  background-color: var(--color-blue);
+  /* Match card blue */
   border-top-left-radius: 1.25rem;
   z-index: 90;
 }
@@ -296,7 +310,8 @@ body {
   position: relative;
   background: transparent;
   box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.3);
-  overflow: visible; /* Key change: Allow pop-out */
+  overflow: visible;
+  /* Key change: Allow pop-out */
   /* Space for the pop-out */
 }
 
@@ -306,23 +321,29 @@ body {
 }
 
 .card:hover {
-  transform: scale(1.05); /* Simpler hover */
+  transform: scale(1.05);
+  /* Simpler hover */
   z-index: 10;
 }
 
 /* Image Section */
 .card-image-wrapper {
   width: 100%;
-  height: 18.75rem; /* Slightly shorter height */
+  height: 18.75rem;
+  /* Slightly shorter height */
   display: flex;
-  align-items: flex-end; /* Align image to bottom essentially, or center */
+  align-items: flex-end;
+  /* Align image to bottom essentially, or center */
   justify-content: center;
   position: relative;
-  z-index: 2; /* Content on top */
+  z-index: 2;
+  /* Content on top */
   /* Fully rounded */
-  overflow: visible; /* Allow chicken to pop out top */
+  overflow: visible;
+  /* Allow chicken to pop out top */
   /* Shadow for the black box */
-  margin-bottom: -2.1875rem; /* Overlap with footer */
+  margin-bottom: -2.1875rem;
+  /* Overlap with footer */
   border-top-right-radius: 1.875rem;
   border-top-left-radius: 1.875rem;
   padding: 0.625rem;
@@ -335,8 +356,10 @@ body {
 .card-blue .card-image-wrapper {
   background: var(--color-blue);
 }
+
 .card-img {
-  max-width: 97%; /* Slight padding feel */
+  max-width: 97%;
+  /* Slight padding feel */
   height: auto;
   /* Pop out and scale up */
   transition: transform 0.3s ease;
@@ -350,23 +373,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.875rem 1.5625rem 0.9375rem 1.875rem; /* Add top padding for overlap */
+  padding: 1.875rem 1.5625rem 0.9375rem 1.875rem;
+  /* Add top padding for overlap */
   color: white;
   position: relative;
-  z-index: 1; /* Below image wrapper */
-  border-radius: 0 0 1.875rem 1.875rem; /* Bottom rounded only */
+  z-index: 1;
+  /* Below image wrapper */
+  border-radius: 0 0 1.875rem 1.875rem;
+  /* Bottom rounded only */
 }
 
 .card-blue .card-footer {
-  background-color: #5373ff; /* Exact Blue Match Attempt */
+  background-color: var(--color-blue);
+  /* Exact Blue Match Attempt */
 }
 
 .card-red .card-footer {
-  background-color: var(--color-red); /* Exact Red Match Attempt */
+  background-color: var(--color-red);
+  /* Exact Red Match Attempt */
 }
 
 .card-text h2 {
-  font-size: 1.75rem; /* Larger */
+  font-size: 1.75rem;
+  /* Larger */
   font-weight: 900;
   margin: 0;
   line-height: 1;
@@ -385,7 +414,8 @@ body {
   width: 1.25rem;
   height: auto;
   /* transform: rotate(90deg); Removed as arrow-right.svg is already pointing right */
-  filter: brightness(0) invert(1); /* Make white */
+  filter: brightness(0) invert(1);
+  /* Make white */
 }
 
 /* Remove old card-bg classes */
@@ -504,8 +534,9 @@ body {
 }
 
 .libaton-title {
-  font-size: 4.1875rem; /* Larger for 1920x1080 */
-  font-weight: 400;
+  font-size: 4.1875rem;
+  /* Larger for 1920x1080 */
+  font-weight: 300;
   font-family: "Raleway", sans-serif;
   color: #303030;
   line-height: 1.1;
@@ -522,11 +553,16 @@ body {
 }
 
 .libaton-subtitle {
-  font-size: 2rem; /* Adjusted for 1920x1080 */
-  font-weight: 500;
+  font-size: 2rem;
+  /* Adjusted for 1920x1080 */
+  font-weight: 300;
   font-family: "Raleway", sans-serif;
   color: #303030;
   margin-bottom: 1.5625rem;
+}
+
+.libaton-subtitle strong {
+  font-weight: 600;
 }
 
 .libaton-header .home-btn {
@@ -587,7 +623,7 @@ body {
 
 .nav-item-text strong {
   color: var(--color-red);
-  font-weight: 800;
+  font-weight: 900;
 }
 
 .nav-item-arrow {
@@ -785,9 +821,11 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 1.125rem 5rem 0 3rem; /* Adjusted for 1920x1080 */
+  padding: 1.125rem 5rem 0 3rem;
+  /* Adjusted for 1920x1080 */
   justify-content: center;
 }
+
 .content-left .container {
   margin: auto 0;
 }
@@ -842,7 +880,8 @@ body {
   max-width: 100%;
   width: auto;
   height: auto;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   border-top-left-radius: 2.5rem;
   border-bottom-left-radius: 2.5rem;
 }
@@ -852,6 +891,7 @@ body {
   object-fit: cover;
   width: 21.875rem;
 }
+
 .image-panel::before {
   content: "";
   background: var(--color-red);
@@ -894,11 +934,9 @@ body {
 
 /* LIBATON Page 2 - About Page */
 .content-right-page-2 {
-  background: radial-gradient(
-    ellipse at center,
-    rgba(220, 31, 45, 0.06) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(ellipse at center,
+      rgba(220, 31, 45, 0.06) 0%,
+      transparent 70%);
   padding: 8rem 0 0 0;
   position: relative;
 }
@@ -910,22 +948,22 @@ body {
   right: 10%;
   width: 15rem;
   height: 15rem;
-  background: radial-gradient(
-    circle,
-    rgba(220, 31, 45, 0.1) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(220, 31, 45, 0.1) 0%,
+      transparent 70%);
   border-radius: 50%;
   z-index: 0;
   animation: pulse 3s ease-in-out infinite;
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
     opacity: 0.5;
   }
+
   50% {
     transform: scale(1.1);
     opacity: 0.8;
@@ -965,6 +1003,7 @@ body {
   background-repeat: no-repeat;
   background-position: center 60%;
 }
+
 .libaton-page-3 .content-left {
   padding: 1.125rem 5rem 0 3rem;
 }
@@ -978,7 +1017,7 @@ body {
   z-index: 1;
   margin-right: auto;
   margin-left: 0;
-  max-width: 720px;
+  max-width: 45rem;
   width: 70%;
 }
 
@@ -1004,10 +1043,12 @@ body {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-1rem);
   }
@@ -1017,7 +1058,8 @@ body {
 
 .content-wrapper-page-4 {
   display: flex;
-  flex-direction: row-reverse; /* Swap visual order */
+  flex-direction: row-reverse;
+  /* Swap visual order */
 }
 
 .content-left-page-4 {
@@ -1030,6 +1072,15 @@ body {
   padding: 1rem 5rem 0 3rem;
   align-items: flex-start;
   flex-direction: column;
+  padding-left: 0;
+}
+
+#libaton-page-4 .content-right-page-4 {
+  padding-left: 3rem;
+}
+
+#libaton-page-4 .content-left-page-4 {
+  padding-top: 13rem;
 }
 
 .image-panel-page-4 {
@@ -1074,7 +1125,7 @@ body {
   align-items: flex-start;
   justify-content: flex-end;
   gap: 1rem;
-  padding-top: 12rem;
+  padding-top: 13rem;
   min-height: 33rem;
 }
 
@@ -1084,7 +1135,7 @@ body {
   transition: filter 0.3s ease;
   margin-left: 0;
   margin-right: auto;
-  max-width: 650px;
+  max-width: 40.625rem;
   width: 85%;
 }
 
@@ -1103,8 +1154,9 @@ body {
   width: 100%;
   cursor: pointer;
 }
+
 #lysonir-page-5 .main-image-page-5 {
-  height: 25rem;
+  height: 23rem;
 }
 
 /* ============================================
@@ -1114,7 +1166,6 @@ body {
 
 /* LIBATON Page 1 - Home/Main Page Title */
 .libaton-title-page-1 {
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(220, 31, 45, 0.1);
   letter-spacing: -0.09375rem;
   transform: translateX(-0.3125rem);
   transition: all 0.3s ease;
@@ -1131,6 +1182,7 @@ body {
     transform: translateX(-2rem);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -1141,6 +1193,7 @@ body {
   0% {
     width: 0;
   }
+
   100% {
     width: 100%;
   }
@@ -1162,7 +1215,7 @@ body {
 
 /* LIBATON Page 4 - Why Page Title */
 .libaton-title-page-4 {
-  font-weight: 400;
+  font-weight: 300;
   color: #2a2a2a;
   position: relative;
   padding-bottom: 0.9375rem;
@@ -1174,10 +1227,12 @@ body {
 }
 
 @keyframes shimmer {
+
   0%,
   100% {
     filter: brightness(1);
   }
+
   50% {
     filter: brightness(1.2);
   }
@@ -1245,10 +1300,12 @@ body {
 }
 
 /* Page 3 - Composition Page Content Classes */
-.composition-boxes-page-3 > div:first-child {
-  grid-column: 1 / -1; /* span full width */
+.composition-boxes-page-3>div:first-child {
+  grid-column: 1 / -1;
+  /* span full width */
 }
-#lysonir-page-3 .composition-boxes-page-3 > div:first-child {
+
+#lysonir-page-3 .composition-boxes-page-3>div:first-child {
   grid-column: 1;
 }
 
@@ -1267,8 +1324,9 @@ body {
 }
 
 /* Page 4 - Why LIBATON Page Content Classes */
-.benefits-container-page-4 > div:first-child {
-  grid-column: 1 / -1; /* span full width */
+.benefits-container-page-4>div:first-child {
+  grid-column: 1 / -1;
+  /* span full width */
 }
 
 .benefit-capsule-page-4 {
@@ -1373,6 +1431,7 @@ body {
 }
 
 .bottle-image {
+  max-height: calc(20vh + 11rem);
   width: 8.25rem;
   height: auto;
   object-fit: contain;
@@ -1422,13 +1481,13 @@ body {
 
 .dose-value {
   font-size: 1.4375rem;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 0.5rem;
 }
 
 .dose-duration {
   font-size: 1.4375rem;
-  font-weight: 400;
+  font-weight: 300;
   margin-top: 0.5rem;
 }
 
@@ -1438,12 +1497,12 @@ body {
 
 /* Composition Page Styles */
 .composition-boxes {
-  gap: 0.9375rem;
+  gap: 1rem;
   margin-top: auto;
   margin-bottom: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  min-height: 25rem;
+  min-height: 23rem;
   align-content: start;
 }
 
@@ -1496,6 +1555,7 @@ body {
   margin-bottom: 0.5rem;
   color: white;
 }
+
 #lysonir-page-3 .composition-title {
   color: var(--color-blue);
   font-weight: 900;
@@ -1506,6 +1566,7 @@ body {
   margin: 0;
   padding: 0.5rem 1rem;
 }
+
 .composition-text {
   font-size: 1.125rem;
   font-weight: 400;
@@ -1520,13 +1581,14 @@ body {
   margin-top: 5.25rem;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  min-height: 24rem;
+  min-height: 30rem;
   align-content: start;
 }
 
 .libaton-page-4 .benefits-container {
   min-height: 33rem;
 }
+
 
 .benefit-capsule {
   display: flex;
@@ -1537,8 +1599,9 @@ body {
   border-radius: 3.5rem;
   color: white;
   overflow: hidden;
-  max-width: calc(100% - 100px);
-  box-shadow: 0px 0px 10px -4px #cfcfcf;
+  max-width: calc(100% - 6.25rem);
+  box-shadow: 0px 0px 0.625rem -0.25rem #cfcfcf;
+  width: 42rem;
 }
 
 /* Odd elements (1st, 3rd, 5th) - pushed to right */
@@ -1551,6 +1614,17 @@ body {
 .benefit-capsule:nth-child(even) {
   margin-right: auto;
   background: var(--color-red);
+}
+
+#libaton-page-4 .benefits-container-page-4 {
+  width: 47rem;
+  margin-right: auto;
+  margin-top: 0;
+  min-height: 36rem;
+}
+
+#libaton-page-4 .benefit-capsule {
+  min-height: 6rem;
 }
 
 .benefit-icon {
@@ -1568,10 +1642,10 @@ body {
 }
 
 .benefit-icon img {
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   object-fit: contain;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 50%;
 }
 
@@ -1622,37 +1696,21 @@ body {
 
 /* Page 4 Interactive Elements - hide capsules by default and animate in on image clicks */
 .benefit-capsule {
-  display: none; /* hidden until revealed */
+  display: none;
+  /* hidden until revealed */
 }
 
 .benefit-capsule.show {
   display: flex;
 }
 
-/* Hide child elements initially; they will animate after parent */
-.benefit-capsule.show .benefit-icon img,
-.benefit-capsule.show .benefit-title,
-.benefit-capsule.show .benefit-text {
-  opacity: 0;
-}
-
-/* Staggered child animations starting after parent animation (0.6s) */
-.benefit-capsule.show .benefit-icon img {
-  animation: zoomIn 0.5s ease-out 0.6s forwards;
-}
-
-.benefit-capsule.show .benefit-title {
-  animation: fadeDown 0.5s ease-out 1.5s forwards;
-}
-
-.benefit-capsule.show .benefit-text {
-  animation: fadeUp 0.5s ease-out 1.5s forwards;
-}
+/* Child elements will use animate.css classes in HTML */
 
 /* Odd elements - dark text */
 .benefit-capsule:nth-child(odd) .benefit-text {
   color: #303030;
 }
+
 /* Even elements - white text */
 .benefit-capsule:nth-child(even) .benefit-text {
   color: #fff;
@@ -1661,6 +1719,7 @@ body {
 .benefit-capsule:nth-child(odd) .benefit-text strong {
   color: var(--color-red);
 }
+
 /* Indication Page Styles */
 .indications-container {
   display: flex;
@@ -1668,10 +1727,10 @@ body {
   gap: 0.9375rem;
   margin-top: 1.25rem;
   width: 85%;
-  max-width: 650px;
+  max-width: 40.625rem;
   margin-left: auto;
   margin: auto;
-  min-height: 30rem;
+  min-height: 32rem;
 }
 
 .indication-item {
@@ -1779,6 +1838,7 @@ body {
     opacity: 0;
     transform: translateY(1rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1826,6 +1886,7 @@ body {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -1838,6 +1899,7 @@ body {
     opacity: 0;
     transform: translateY(-1rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1850,6 +1912,7 @@ body {
     opacity: 0;
     transform: translateY(1rem);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1866,9 +1929,11 @@ body {
   0% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.015);
   }
+
   100% {
     transform: scale(1);
   }
@@ -1878,13 +1943,14 @@ body {
 .content-right-page-5 .indication-item {
   background-color: white !important;
   flex-direction: row;
-  max-width: 650px;
+  max-width: 40.625rem;
   width: 85%;
 }
 
 .content-right-page-5 .indication-number {
   color: var(--color-red) !important;
 }
+
 .content-right-page-5 .indication-text {
   color: #303030 !important;
 }
@@ -2020,27 +2086,43 @@ body {
 #lysonir-page-4 .content-left-page-4 {
   padding-left: 3rem;
 }
+
 #lysonir-page-4 .benefit-capsule:nth-child(odd) {
   background: var(--color-blue);
+  margin-left: 0;
+  margin-right: auto;
 }
 
 #lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-title {
   color: white;
 }
+
 #lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-text {
   color: white;
 }
+
 #lysonir-page-4 .benefit-capsule:nth-child(odd) .benefit-icon img {
   background: white;
 }
 
+#lysonir-page-4 .benefits-container {
+  padding-top: 10.25rem;
+  margin: auto auto auto 0;
+  min-height: 40rem;
+}
+
+
 #lysonir-page-4 .benefit-capsule:nth-child(even) {
   background: white;
+  margin-left: auto;
+  margin-right: 0;
+  min-height: 6rem;
 }
 
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-icon img {
   background: var(--color-blue);
 }
+
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-title {
   color: var(--color-blue);
 }
@@ -2048,6 +2130,7 @@ body {
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-icon img {
   background: var(--color-blue);
 }
+
 #lysonir-page-4 .benefit-capsule:nth-child(even) .benefit-text {
   color: #303030;
 }
@@ -2070,7 +2153,7 @@ body {
 #lysonir-page-5 .content-right-page-5 .indication-item {
   background-color: white !important;
   flex-direction: row;
-  max-width: 650px;
+  max-width: 40.625rem;
   width: 85%;
 }
 
@@ -2121,10 +2204,12 @@ body {
 /* Hide composition boxes by default for LYSONIR page 3 interactions */
 #lysonir-page-3 .composition-box-page-3 {
   display: none;
-  border: 2px solid #fff;
+  border: 0.125rem solid #fff;
   flex-direction: column;
   gap: 0;
+  width: 15rem;
 }
+
 #lysonir-page-3 .composition-box-page-3 img {
   max-height: 6rem;
   max-width: 100%;
@@ -2259,6 +2344,53 @@ body {
 #lysonir-page-5 .indication-item:nth-child(even) .indication-number {
   color: var(--color-blue);
 }
+
+#lysonir-page-5 .content-right-page-5 {
+  justify-content: flex-end;
+  height: 45.5rem;
+  padding-top: 11rem;
+  margin: auto;
+}
+
+#lysonir-page-5 .image-panel-page-5 {
+  margin-bottom: 1.5rem;
+}
+
+#libaton-page-5 .content-right-page-5 {
+  justify-content: flex-end;
+  height: 45.5rem;
+  margin: auto;
+}
+
+#libaton-page-5 .image-panel-page-5 {
+  margin-bottom: 1.5rem;
+}
+
 #lysonir-page-5 .content-right-page-5 .indication-item {
   color: var(--color-blue) !important;
+  height: 7.5rem;
+}
+
+@media (max-height: 767px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+@media (max-height: 720px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 700px) {
+  :root {
+    font-size: 11px;
+  }
+}
+
+@media (max-height: 600px) {
+  :root {
+    font-size: 10px;
+  }
 }
